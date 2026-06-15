@@ -3,6 +3,14 @@ const budgetService = require('../services/budgetService');
 
 const trim = (value) => (value || '').toString().trim();
 
+const normalizeTripPlanForView = (tripPlan) => {
+  if (Array.isArray(tripPlan?.days)) {
+    return tripPlan;
+  }
+
+  return null;
+};
+
 const renderAgnes = (res, options = {}) => {
   res.render('agnes', {
     title: 'Agnes AI',
@@ -10,18 +18,18 @@ const renderAgnes = (res, options = {}) => {
     city: '',
     destination: '',
     budget: '',
+    days: '',
+    places: '',
     travelDates: '',
-    weatherNotes: '',
-    wardrobe: '',
     tripPlan: null,
     budgetPlan: null,
     textPrompt: '',
     imagePrompt: '',
     textResult: '',
     imageResult: '',
-    visualError: '',
     error: '',
-    ...options
+    ...options,
+    tripPlan: options.tripPlan ? normalizeTripPlanForView(options.tripPlan) : options.tripPlan || null
   });
 };
 
@@ -37,17 +45,24 @@ exports.generateTrip = async (req, res) => {
   const travelDates = trim(req.body.travelDates);
   const weatherNotes = trim(req.body.weatherNotes);
   const wardrobe = trim(req.body.wardrobe);
+  const country = req.body.country && req.body.country.trim();
+  const city = req.body.city && req.body.city.trim();
+  const destination = [city, country].filter(Boolean).join(', ') || (req.body.destination && req.body.destination.trim());
+  const budget = req.body.budget && req.body.budget.trim();
+  const days = req.body.days && req.body.days.trim();
+  const places = req.body.places && req.body.places.trim();
+  const travelDates = req.body.travelDates && req.body.travelDates.trim();
 
-  if (!destination || !budget) {
+  if (!destination || !budget || !days) {
     renderAgnes(res, {
       country,
       city,
       destination,
       budget,
+      days,
+      places,
       travelDates,
-      weatherNotes,
-      wardrobe,
-      error: 'Enter at least a destination and budget.'
+      error: 'Enter a country, city, budget, and number of days.'
     });
     return;
   }
@@ -56,9 +71,9 @@ exports.generateTrip = async (req, res) => {
     const tripPlan = await agnesService.generateTripPlan({
       destination,
       budget,
+      days,
+      places,
       travelDates,
-      weatherNotes,
-      wardrobe
     });
     const budgetPlan = budgetService.createBudgetPlan({
       budget,
@@ -66,22 +81,13 @@ exports.generateTrip = async (req, res) => {
       itinerary: tripPlan.itinerary
     });
 
-    let imageResult = '';
-    let visualError = '';
-
-    if (tripPlan.outfitPrompt) {
-      try {
-        imageResult = await agnesService.generateImage(tripPlan.outfitPrompt);
-      } catch (error) {
-        visualError = error.message;
-      }
-    }
-
     renderAgnes(res, {
       country,
       city,
       destination,
       budget,
+      days,
+      places,
       travelDates,
       weatherNotes,
       wardrobe,
@@ -89,6 +95,7 @@ exports.generateTrip = async (req, res) => {
       budgetPlan,
       imageResult,
       visualError
+      tripPlan
     });
   } catch (error) {
     renderAgnes(res, {
@@ -96,9 +103,9 @@ exports.generateTrip = async (req, res) => {
       city,
       destination,
       budget,
+      days,
+      places,
       travelDates,
-      weatherNotes,
-      wardrobe,
       error: error.message
     });
   }
