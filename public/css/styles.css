@@ -218,6 +218,14 @@ textarea {
   border-radius: 8px;
 }
 
+.success-alert {
+  padding: 12px 16px;
+  color: #0f5132;
+  background: #eaf7ef;
+  border: 1px solid #b7e4c7;
+  border-radius: 8px;
+}
+
 .trip-builder {
   margin-bottom: 24px;
 }
@@ -325,6 +333,7 @@ textarea {
   color: #8a1f11;
 }
 
+.itinerary-list,
 .item-list {
   display: grid;
   gap: 12px;
@@ -333,6 +342,7 @@ textarea {
   list-style: none;
 }
 
+.itinerary-list li,
 .item-list li {
   display: flex;
   gap: 12px;
@@ -341,6 +351,10 @@ textarea {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
+}
+
+.itinerary-list li {
+  justify-content: space-between;
 }
 
 .item-list span {

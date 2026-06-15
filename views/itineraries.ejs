@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<section class="section-header">
+  <div>
+    <p class="eyebrow">History</p>
+    <h1>Saved itineraries</h1>
+  </div>
+</section>
+
+<% if (!itineraries.length) { %>
+  <p>No itineraries saved yet.</p>
+<% } %>
+
+<ul class="itinerary-list">
+  <% itineraries.forEach((itinerary) => { %>
+    <li>
+      <div>
+        <strong><%= itinerary.input.destination %></strong>
+        <p><%= itinerary.input.startDate %> to <%= itinerary.input.endDate %> · <%= itinerary.input.days %> days · <%= itinerary.input.budget %></p>
+      </div>
+      <a class="button" href="/itineraries/<%= itinerary.id %>">Open</a>
+    </li>
+  <% }) %>
+</ul>
+
+<%- include('partials/footer') %>

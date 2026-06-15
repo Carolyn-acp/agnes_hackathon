@@ -12,6 +12,12 @@
   <p class="alert"><%= error %></p>
 <% } %>
 
+<% if (savedItinerary) { %>
+  <p class="success-alert">
+    Saved itinerary <a href="/itineraries/<%= savedItinerary.id %>"><%= savedItinerary.id %></a>
+  </p>
+<% } %>
+
 <section class="tool-panel trip-builder">
   <h2>Trip inputs</h2>
   <form action="/agnes/trip" method="post">
