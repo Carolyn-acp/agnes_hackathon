@@ -3,6 +3,8 @@ const agnesService = require('../services/agnesService');
 const renderAgnes = (res, options = {}) => {
   res.render('agnes', {
     title: 'Agnes AI',
+    country: '',
+    city: '',
     destination: '',
     budget: '',
     travelDates: '',
@@ -24,7 +26,9 @@ exports.showAgnes = (req, res) => {
 };
 
 exports.generateTrip = async (req, res) => {
-  const destination = req.body.destination && req.body.destination.trim();
+  const country = req.body.country && req.body.country.trim();
+  const city = req.body.city && req.body.city.trim();
+  const destination = [city, country].filter(Boolean).join(', ') || (req.body.destination && req.body.destination.trim());
   const budget = req.body.budget && req.body.budget.trim();
   const travelDates = req.body.travelDates && req.body.travelDates.trim();
   const weatherNotes = req.body.weatherNotes && req.body.weatherNotes.trim();
@@ -32,6 +36,8 @@ exports.generateTrip = async (req, res) => {
 
   if (!destination || !budget) {
     renderAgnes(res, {
+      country,
+      city,
       destination,
       budget,
       travelDates,
@@ -63,6 +69,8 @@ exports.generateTrip = async (req, res) => {
     }
 
     renderAgnes(res, {
+      country,
+      city,
       destination,
       budget,
       travelDates,
@@ -74,6 +82,8 @@ exports.generateTrip = async (req, res) => {
     });
   } catch (error) {
     renderAgnes(res, {
+      country,
+      city,
       destination,
       budget,
       travelDates,

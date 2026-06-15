@@ -1,5 +1,6 @@
 const express = require('express');
 const agnesController = require('../controllers/agnesController');
+const locationController = require('../controllers/locationController');
 const pageController = require('../controllers/pageController');
 
 const router = express.Router();
@@ -11,5 +12,7 @@ router.get('/agnes', agnesController.showAgnes);
 router.post('/agnes/trip', agnesController.generateTrip);
 router.post('/agnes/text', agnesController.generateText);
 router.post('/agnes/image', agnesController.generateImage);
+router.get('/api/countries', locationController.listCountries);
+router.get('/api/cities', locationController.listCities);
 
 module.exports = router;

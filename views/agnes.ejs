@@ -17,8 +17,19 @@
   <form action="/agnes/trip" method="post">
     <div class="form-grid">
       <label>
-        Destination
-        <input name="destination" type="text" placeholder="Tokyo, Japan" value="<%= destination %>" required>
+        Country
+        <select name="country" data-country-select data-selected-country="<%= country %>" required>
+          <option value="<%= country %>"><%= country || 'Loading countries...' %></option>
+        </select>
+        <span class="field-status" data-country-status></span>
+      </label>
+
+      <label>
+        City
+        <select name="city" data-city-select data-selected-city="<%= city %>" required>
+          <option value="<%= city %>"><%= city || 'Select a country first' %></option>
+        </select>
+        <span class="field-status" data-city-status></span>
       </label>
 
       <label>
@@ -96,5 +107,7 @@
     </article>
   </section>
 <% } %>
+
+<script src="/js/locationPicker.js"></script>
 
 <%- include('partials/footer') %>
