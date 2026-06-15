@@ -297,6 +297,144 @@ textarea {
   font-weight: 700;
 }
 
+.budget-card {
+  border-color: #22a06b;
+  box-shadow: 0 0 0 1px rgba(34, 160, 107, 0.12);
+}
+
+.budget-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.budget-metrics div,
+.category-grid div {
+  min-width: 0;
+  padding: 12px;
+  background: #f7faf8;
+  border: 1px solid #d9eadf;
+  border-radius: 8px;
+}
+
+.budget-metrics span,
+.category-grid span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.budget-metrics strong,
+.category-grid strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #173b2f;
+  font-size: 1.2rem;
+}
+
+.budget-planner {
+  margin-top: 28px;
+}
+
+.budget-planner h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.budget-day-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.budget-day {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 5px solid #22a06b;
+  border-radius: 8px;
+}
+
+.budget-day-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.budget-day h3 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.category-grid div:nth-child(1) {
+  background: #fff7e8;
+  border-color: #f3d7a6;
+}
+
+.category-grid div:nth-child(2) {
+  background: #eef6ff;
+  border-color: #bfdcff;
+}
+
+.category-grid div:nth-child(3) {
+  background: #f7f0ff;
+  border-color: #ddc8ff;
+}
+
+.category-grid div:nth-child(4) {
+  background: #fff0f3;
+  border-color: #ffc9d2;
+}
+
+.category-grid div:nth-child(5) {
+  background: #f2fbf6;
+  border-color: #bbe5ce;
+}
+
+.place-guidance {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.place-guidance li {
+  display: grid;
+  gap: 4px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.place-guidance strong {
+  color: var(--text);
+}
+
+.place-guidance span,
+.budget-tip {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.budget-tip {
+  margin: 14px 0 0;
+  padding: 12px;
+  background: #fbfaf7;
+  border: 1px solid #e7dfcf;
+  border-radius: 8px;
+  font-size: 0.98rem;
+}
+
 .inline-error {
   color: #8a1f11;
 }
@@ -336,7 +474,12 @@ textarea {
 
   .form-grid,
   .agent-results,
+<<<<<<< Updated upstream
   .day-grid {
+=======
+  .budget-metrics,
+  .category-grid {
+>>>>>>> Stashed changes
     grid-template-columns: 1fr;
   }
 
