@@ -11,6 +11,8 @@ router.get('/items', pageController.listItems);
 router.post('/items', pageController.createItem);
 router.get('/agnes', agnesController.showAgnes);
 router.post('/agnes/trip', agnesController.generateTrip);
+router.get('/itineraries', agnesController.listItineraries);
+router.get('/itineraries/:id', agnesController.showItinerary);
 router.post('/agnes/text', agnesController.generateText);
 router.post('/agnes/image', agnesController.generateImage);
 router.get('/budget', budgetController.showBudget);
