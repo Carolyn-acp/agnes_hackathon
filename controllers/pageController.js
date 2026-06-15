@@ -14,6 +14,12 @@ exports.listItems = (req, res) => {
   });
 };
 
+exports.showWardrobe = (req, res) => {
+  res.render('wardrobe', {
+    title: 'Wardrobe'
+  });
+};
+
 exports.createItem = (req, res) => {
   const name = req.body.name && req.body.name.trim();
 

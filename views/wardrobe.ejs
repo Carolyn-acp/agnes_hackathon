@@ -1,0 +1,101 @@
+<%- include('partials/header') %>
+
+<section class="section-header wardrobe-heading">
+  <div>
+    <p class="eyebrow">Wardrobe studio</p>
+    <h1>Build outfits from your closet.</h1>
+    <p>Add clothing photos, fashion files, or typed items, then choose a style direction for mix-and-match outfit ideas.</p>
+  </div>
+</section>
+
+<section class="wardrobe-layout" aria-label="Wardrobe builder">
+  <div class="wardrobe-main">
+    <section class="tool-panel wardrobe-uploader">
+      <div class="panel-title-row">
+        <h2>Add wardrobe items</h2>
+        <span class="wardrobe-count" data-wardrobe-count>0 items</span>
+      </div>
+
+      <div class="upload-actions" aria-label="Upload choices">
+        <label class="upload-tile">
+          <span class="upload-icon" aria-hidden="true">+</span>
+          <span>Photos</span>
+          <input data-wardrobe-input type="file" accept="image/*" multiple>
+        </label>
+
+        <label class="upload-tile">
+          <span class="upload-icon" aria-hidden="true">+</span>
+          <span>Files</span>
+          <input data-wardrobe-input type="file" accept="image/*,.pdf,.doc,.docx,.txt" multiple>
+        </label>
+
+        <label class="upload-tile">
+          <span class="upload-icon" aria-hidden="true">+</span>
+          <span>Camera</span>
+          <input data-wardrobe-input type="file" accept="image/*" capture="environment">
+        </label>
+      </div>
+
+      <div class="quality-message" data-quality-message role="status" aria-live="polite">
+        Add a clear, bright photo to unlock item recognition.
+      </div>
+
+      <div class="wardrobe-grid" data-wardrobe-grid>
+        <article class="empty-state">
+          <h3>No wardrobe items yet</h3>
+          <p>Your uploaded clothes, skirts, accessories, shoes, bags, and fashion files will appear here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="tool-panel">
+      <h2>Describe items instead</h2>
+      <label class="stacked-field">
+        Outfit or closet description
+        <textarea data-description-input rows="6" placeholder="black mini skirt, white crop top, silver hoops, leather jacket, ballet flats"></textarea>
+      </label>
+      <button type="button" data-add-description>Add description</button>
+    </section>
+  </div>
+
+  <aside class="tool-panel outfit-builder">
+    <h2>Mix and match</h2>
+
+    <label class="stacked-field">
+      Preferred style
+      <select data-style-select>
+        <option value="street">Street style</option>
+        <option value="downtown">Downtown</option>
+        <option value="coquette">Coquette</option>
+        <option value="fancy">Fancy</option>
+        <option value="minimal">Minimal</option>
+        <option value="sporty">Sporty chic</option>
+        <option value="old-money">Old money</option>
+        <option value="y2k">Y2K</option>
+      </select>
+    </label>
+
+    <label class="stacked-field">
+      Days
+      <input data-days-input type="number" min="1" max="14" value="3">
+    </label>
+
+    <div class="builder-actions">
+      <button type="button" data-generate-outfit>Mix outfits</button>
+      <button class="plus-button" type="button" data-add-combination aria-label="Add another clothing combination">+</button>
+    </div>
+
+    <p class="generation-status" data-generation-status aria-live="polite"></p>
+
+    <div class="outfit-results" data-outfit-results aria-live="polite">
+      <article class="empty-state compact">
+        <h3>No combinations yet</h3>
+        <p>Choose a style and add wardrobe details.</p>
+      </article>
+    </div>
+  </aside>
+</section>
+
+<script src="/js/wardrobe.js"></script>
+
+<%- include('partials/footer') %>
