@@ -1,0 +1,189 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-18 to 2026-06-22",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Arrival and Marina Bay Intro",
+        "weather": "Partly cloudy with a chance of afternoon thunderstorms, 26°C/30°C.",
+        "activities": [
+          "Check into hotel near Marina Bay or City Hall.",
+          "Visit the Marina Bay Sands Skypark Observation Deck for sunset views.",
+          "Walk along the Gardens by the Bay Promenade."
+        ],
+        "attractions": [
+          {
+            "name": "Gardens by the Bay",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Marina Bay Sands",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Low cost entry for walking areas; budget for Observation Deck ticket (~SGD 33)."
+      },
+      {
+        "day": 2,
+        "title": "Sentosa Adventure Day",
+        "weather": "Sunny and hot, 28°C/32°C, clear skies.",
+        "activities": [
+          "Take the Sentosa Express or Cable Car from downtown.",
+          "Visit Universal Studios Singapore for full-day exploration.",
+          "Evening at Imbiah Lookout for panoramic views."
+        ],
+        "attractions": [
+          {
+            "name": "Universal Studios Singapore",
+            "source": "user-selected"
+          },
+          {
+            "name": "Sentosa Cable Car",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Imbiah Lookout",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Major expense day. USS tickets ~SGD 110. Budget carefully for meals on the island."
+      },
+      {
+        "day": 3,
+        "title": "Viva City and Beach Relaxation",
+        "weather": "Warm with scattered clouds, 27°C/31°C.",
+        "activities": [
+          "Explore VivoCity mall and its rooftop garden.",
+          "Take the Sentosa Bus to beaches like Siloso or Tanjong Beach.",
+          "Enjoy seafood dinner at Siloso Beach Walk."
+        ],
+        "attractions": [
+          {
+            "name": "VivoCity",
+            "source": "user-selected"
+          },
+          {
+            "name": "Siloso Beach",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "SkyHelix Sentosa",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Moderate spending on beach activities and dining. Free entry to VivoCity."
+      },
+      {
+        "day": 4,
+        "title": "Cultural Heritage Tour",
+        "weather": "Partly cloudy with high humidity, 26°C/30°C.",
+        "activities": [
+          "Explore Little India and Tekka Centre.",
+          "Visit Sri Veeramakaliamman Temple.",
+          "Walk through Chinatown and visit Buddha Tooth Relic Temple."
+        ],
+        "attractions": [
+          {
+            "name": "Chinatown Heritage Centre",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Little India",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Buddha Tooth Relic Temple",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Low cost day. Temples are free; budget for street food and souvenirs."
+      },
+      {
+        "day": 5,
+        "title": "Shopping and Departure Prep",
+        "weather": "Sunny intervals, 27°C/32°C.",
+        "activities": [
+          "Final shopping at Orchard Road or ION Orchard.",
+          "Visit the ArtScience Museum at Marina Bay Sands.",
+          "Pack and prepare for departure."
+        ],
+        "attractions": [
+          {
+            "name": "ArtScience Museum",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "ION Orchard",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Orchard Road",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Budget for last-minute shopping and airport transfer (~SGD 20)."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable shirts",
+          "Shorts and casual trousers",
+          "Lightweight pants for temple visits (knees covered)",
+          "Swimwear",
+          "Comfortable walking shoes",
+          "Sandals/Flip-flops for beach and hotel",
+          "Light jacket or cardigan for heavy air-conditioning",
+          "Underwear and socks (5 days)",
+          "Sleepwear"
+        ]
+      },
+      {
+        "name": "Toiletries",
+        "items": [
+          "Sunscreen (high SPF)",
+          "Insect repellent",
+          "Travel-sized shampoo and soap",
+          "Toothbrush and toothpaste",
+          "Deodorant",
+          "Basic first-aid kit (plasters, antiseptic)",
+          "Pain relievers"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Phone and charger",
+          "Universal power adapter (Singapore uses Type G)",
+          "Portable power bank",
+          "Waterproof phone case or bag",
+          "Camera (optional)"
+        ]
+      },
+      {
+        "name": "Accessories",
+        "items": [
+          "Sunglasses",
+          "Hat or cap for sun protection",
+          "Small daypack for daily excursions",
+          "Reusable water bottle",
+          "Umbrella or lightweight rain poncho"
+        ]
+      },
+      {
+        "name": "Documents & Money",
+        "items": [
+          "Passport and visa (if applicable)",
+          "Hotel and flight confirmations",
+          "Credit/debit cards",
+          "Singapore Dollar cash for street food and tips",
+          "Travel insurance details"
+        ]
+      }
+    ]
+  }
+}

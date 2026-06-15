@@ -1,0 +1,165 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-18 to 2026-06-22",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Arrival and Marina Bay Exploration",
+        "weather": "Partly cloudy, 28°C/31°C. High humidity with a chance of afternoon thunderstorms. Seasonal estimate for mid-June.",
+        "activities": [
+          "Check into hotel and rest after flight.",
+          "Visit Marina Bay Sands SkyPark Observation Deck.",
+          "Walk around Gardens by the Bay (Supertree Grove)."
+        ],
+        "attractions": [
+          {
+            "name": "Marina Bay Sands SkyPark",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Gardens by the Bay",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Day 1 costs are low; focus is on arrival and free/low-cost scenic walks."
+      },
+      {
+        "day": 2,
+        "title": "Sentosa Island Adventure",
+        "weather": "Sunny intervals, 29°C/32°C. Warm and humid. Rain possible late evening.",
+        "activities": [
+          "Take the Sentosa Express to Sentosa Island.",
+          "Explore Universal Studios Singapore.",
+          "Relax at Siloso Beach or visit S.E.A. Aquarium."
+        ],
+        "attractions": [
+          {
+            "name": "Universal Studios Singapore",
+            "source": "user-selected"
+          },
+          {
+            "name": "S.E.A. Aquarium",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Major expense day due to theme park ticket. Budget allocation approx SGD 150-200 for entry fees."
+      },
+      {
+        "day": 3,
+        "title": "VivoCity and Harbourfront Culture",
+        "weather": "Cloudy with scattered showers, 27°C/30°C. Typical monsoon season weather.",
+        "activities": [
+          "Spend morning shopping and dining at VivoCity.",
+          "Visit ArtScience Museum.",
+          "Take a sunset cruise from HarbourFront Centre."
+        ],
+        "attractions": [
+          {
+            "name": "VivoCity",
+            "source": "user-selected"
+          },
+          {
+            "name": "ArtScience Museum",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Moderate spending on shopping and museum tickets. Cruise may exceed budget if not pre-booked."
+      },
+      {
+        "day": 4,
+        "title": "Cultural Heritage Tour",
+        "weather": "Heavy rain likely, 26°C/29°C. Prepare for wet conditions.",
+        "activities": [
+          "Explore Chinatown and Buddha Tooth Relic Temple.",
+          "Visit Little India for street art and culture.",
+          "Dine at Maxwell Food Centre for local hawker food."
+        ],
+        "attractions": [
+          {
+            "name": "Chinatown Heritage Centre",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Maxwell Food Centre",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Low cost day focusing on affordable local food and free temple visits."
+      },
+      {
+        "day": 5,
+        "title": "Final Souvenirs and Departure",
+        "weather": "Partly cloudy, 28°C/31°C. Clearing skies before departure.",
+        "activities": [
+          "Last-minute shopping at Orchard Road or Jewel Changi Airport.",
+          "Enjoy a farewell meal at a local restaurant.",
+          "Head to Changi Airport for departure."
+        ],
+        "attractions": [
+          {
+            "name": "Jewel Changi Airport",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Budget reserved for souvenirs and final meals. Total trip budget carefully managed to stay within SGD 1400."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable t-shirts",
+          "Shorts and casual trousers",
+          "Comfortable walking shoes/sneakers",
+          "Sandals or water-friendly footwear",
+          "Light rain jacket or poncho",
+          "Swimwear",
+          "Undergarments and socks (5 days)",
+          "Hat or cap for sun protection"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Phone and charger",
+          "Power bank",
+          "Universal travel adapter (Singapore uses Type G)",
+          "Camera (optional)"
+        ]
+      },
+      {
+        "name": "Toiletries & Health",
+        "items": [
+          "Sunscreen (high SPF)",
+          "Insect repellent",
+          "Personal medications",
+          "Hand sanitizer",
+          "Tissues or wet wipes",
+          "Travel-sized toiletries"
+        ]
+      },
+      {
+        "name": "Documents & Money",
+        "items": [
+          "Passport and visa (if applicable)",
+          "Flight and hotel confirmations",
+          "Credit/debit cards",
+          "Small amount of SGD cash for hawker centers and taxis",
+          "Travel insurance details"
+        ]
+      },
+      {
+        "name": "Accessories",
+        "items": [
+          "Reusable water bottle",
+          "Small backpack or day bag",
+          "Umbrella",
+          "Sunglasses"
+        ]
+      }
+    ]
+  }
+}

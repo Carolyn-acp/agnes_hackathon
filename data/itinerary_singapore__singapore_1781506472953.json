@@ -1,0 +1,172 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-18 to 2026-06-22",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Arrival and Marina Bay Lights",
+        "weather": "Partly cloudy, 27°C/31°C, chance of afternoon shower.",
+        "activities": [
+          "Check into hotel and rest",
+          "Visit Gardens by the Bay (OCBC Skyway & Cloud Forest)",
+          "Watch Spectra Light & Water Show at Marina Bay Sands"
+        ],
+        "attractions": [
+          {
+            "name": "Gardens by the Bay",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Marina Bay Sands",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Accommodation and initial meals. Budget allows for moderate dining."
+      },
+      {
+        "day": 2,
+        "title": "Sentosa Island Adventure",
+        "weather": "Sunny, 28°C/32°C, low humidity.",
+        "activities": [
+          "Take Sentosa Express/Cable Car to island",
+          "Visit Universal Studios Singapore",
+          "Relax at Siloso Beach or Skyline Luge"
+        ],
+        "attractions": [
+          {
+            "name": "Universal Studios Singapore",
+            "source": "user-selected"
+          },
+          {
+            "name": "Skyline Luge Sentosa",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "USS tickets are a major expense. Use bus/walking on island to save transport costs."
+      },
+      {
+        "day": 3,
+        "title": "Sentosa Culture and Oceanarium",
+        "weather": "Cloudy with thunderstorms, 26°C/30°C.",
+        "activities": [
+          "Explore S.E.A. Aquarium",
+          "Visit Fort Siloso Museum",
+          "Dinner at One-North or Sentosa dining precinct"
+        ],
+        "attractions": [
+          {
+            "name": "S.E.A. Aquarium",
+            "source": "user-selected"
+          },
+          {
+            "name": "Fort Siloso",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Focus on indoor/covered attractions due to rain risk. Moderate food budget."
+      },
+      {
+        "day": 4,
+        "title": "VivoCity and Harbourfront Exploration",
+        "weather": "Overcast, 27°C/31°C, humid.",
+        "activities": [
+          "Shop at VivoCity Mall",
+          "Visit ArtScience Museum",
+          "Walk along HarbourFront promenade"
+        ],
+        "attractions": [
+          {
+            "name": "VivoCity",
+            "source": "user-selected"
+          },
+          {
+            "name": "ArtScience Museum",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Free entry to mall areas. Museum ticket fits within remaining budget."
+      },
+      {
+        "day": 5,
+        "title": "Cultural Heritage and Departure",
+        "weather": "Partly sunny, 28°C/32°C.",
+        "activities": [
+          "Visit Chinatown and Buddha Tooth Relic Temple",
+          "Explore Little India or Kampong Glam",
+          "Last-minute souvenir shopping before departure"
+        ],
+        "attractions": [
+          {
+            "name": "Buddha Tooth Relic Temple",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Kampong Glam",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Low-cost cultural sites. Use savings for final meals or transport to airport."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable t-shirts",
+          "Shorts or light trousers",
+          "Comfortable walking shoes/sneakers",
+          "Sandals or flip-flops",
+          "Swimwear",
+          "Light jacket or cardigan for air-conditioned malls/museums",
+          "Socks and underwear (5 sets)",
+          "Hat or cap for sun protection"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Universal power adapter (Singapore uses Type G)",
+          "Portable power bank",
+          "Phone charger",
+          "Camera or smartphone with good camera",
+          "Headphones"
+        ]
+      },
+      {
+        "name": "Toiletries & Health",
+        "items": [
+          "Sunscreen (high SPF)",
+          "Insect repellent",
+          "Personal toiletries (toothbrush, toothpaste, etc.)",
+          "Basic first aid kit (plasters, antiseptic)",
+          "Hand sanitizer",
+          "Prescription medications"
+        ]
+      },
+      {
+        "name": "Travel Documents & Money",
+        "items": [
+          "Passport (valid for at least 6 months)",
+          "Printed or digital flight itinerary",
+          "Hotel confirmation details",
+          "Credit/debit cards",
+          "Small amount of local currency (SGD) for tips/small vendors",
+          "Travel insurance documents"
+        ]
+      },
+      {
+        "name": "Accessories & Misc",
+        "items": [
+          "Compact umbrella or lightweight raincoat",
+          "Reusable water bottle",
+          "Daypack or small backpack",
+          "Sunglasses",
+          "Snacks for transit"
+        ]
+      }
+    ]
+  }
+}

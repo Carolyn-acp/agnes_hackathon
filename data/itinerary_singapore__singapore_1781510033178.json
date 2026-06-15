@@ -1,0 +1,242 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-24 to 2026-07-01",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Arrival and Marina Bay Introduction",
+        "weather": "Tropical; hot and humid with a chance of afternoon thunderstorms. Approx 31°C/88°F.",
+        "activities": [
+          "Check into hotel and freshen up.",
+          "Walk along Marina Bay Promenade to see the Merlion Park.",
+          "Enjoy dinner at a hawker center near Chinatown or Little India."
+        ],
+        "attractions": [
+          {
+            "name": "Merlion Park",
+            "source": "user-selected"
+          },
+          {
+            "name": "Marina Bay Sands SkyPark Observation Deck",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Accommodation deposit and initial meals. Budget for transport via MRT."
+      },
+      {
+        "day": 2,
+        "title": "Cultural Heritage: Chinatown and Little India",
+        "weather": "Tropical; sunny intervals with high humidity. Approx 32°C/90°F.",
+        "activities": [
+          "Visit Buddha Tooth Relic Temple in Chinatown.",
+          "Explore street art and shops in Haji Lane.",
+          "Wander through Little India, visiting Sri Veeramakaliamman Temple."
+        ],
+        "attractions": [
+          {
+            "name": "Buddha Tooth Relic Temple",
+            "source": "user-selected"
+          },
+          {
+            "name": "Haji Lane",
+            "source": "user-selected"
+          },
+          {
+            "name": "Little India ARTEAL",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Free entry for most cultural sites. Budget for local shopping and modest dining."
+      },
+      {
+        "day": 3,
+        "title": "Nature and Gardens",
+        "weather": "Tropical; partly cloudy with possible rain showers. Approx 31°C/88°F.",
+        "activities": [
+          "Spend the morning at Gardens by the Bay, focusing on Cloud Forest and Flower Dome.",
+          "Watch the Garden Rhapsody light show at Supertree Grove in the evening.",
+          "Dinner at a nearby restaurant in Bayfront area."
+        ],
+        "attractions": [
+          {
+            "name": "Gardens by the Bay",
+            "source": "user-selected"
+          },
+          {
+            "name": "Supertree Grove Light Show",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Gardens by the Bay conservatories require tickets. Allocate significant budget here."
+      },
+      {
+        "day": 4,
+        "title": "Sentosa Island Adventure",
+        "weather": "Tropical; warm and breezy. Approx 32°C/90°F.",
+        "activities": [
+          "Take the Sentosa Express or cable car to the island.",
+          "Visit Universal Studios Singapore for half-day fun.",
+          "Relax at Siloso Beach or enjoy the S.E.A. Aquarium."
+        ],
+        "attractions": [
+          {
+            "name": "Universal Studios Singapore",
+            "source": "user-selected"
+          },
+          {
+            "name": "S.E.A. Aquarium",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Theme park and aquarium tickets are expensive. Consider combo passes."
+      },
+      {
+        "day": 5,
+        "title": "Modern Art and Shopping",
+        "weather": "Tropical; hot and humid. Approx 31°C/88°F.",
+        "activities": [
+          "Explore the National Gallery Singapore housed in the former Supreme Court and City Hall.",
+          "Head to Orchard Road for world-class shopping.",
+          "Dinner at a trendy spot in Joo Chiat/Katong for Peranakan cuisine."
+        ],
+        "attractions": [
+          {
+            "name": "National Gallery Singapore",
+            "source": "user-selected"
+          },
+          {
+            "name": "Orchard Road Shopping Belt",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Gallery entry may have fees. Shopping budget depends on personal interest."
+      },
+      {
+        "day": 6,
+        "title": "Zoo and Night Safari",
+        "weather": "Tropical; evening might be cooler but still humid. Approx 30°C/86°F.",
+        "activities": [
+          "Visit the Singapore Zoo during the day to see open-concept exhibits.",
+          "Have lunch at the zoo's food court.",
+          "Experience the Night Safari, the world's first nighttime wildlife park."
+        ],
+        "attractions": [
+          {
+            "name": "Singapore Zoo",
+            "source": "user-selected"
+          },
+          {
+            "name": "Night Safari",
+            "source": "user-selected"
+          }
+        ],
+        "budgetNote": "Both zoos require substantial ticket budgets. Book online in advance for discounts."
+      },
+      {
+        "day": 7,
+        "title": "Raffles Place and Colonial History",
+        "weather": "Tropical; sunny with isolated showers. Approx 31°C/88°F.",
+        "activities": [
+          "Walk around Raffles Place and see the Fullerton Hotel.",
+          "Visit the Asian Civilisations Museum.",
+          "Enjoy a farewell dinner at a Michelin-starred hawker stall or local fine dining."
+        ],
+        "attractions": [
+          {
+            "name": "Fullerton Hotel",
+            "source": "user-selected"
+          },
+          {
+            "name": "Asian Civilisations Museum",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Museum entry is affordable. Farewell dinner can vary widely in cost."
+      },
+      {
+        "day": 8,
+        "title": "Departure and Last-Minute Souvenirs",
+        "weather": "Tropical; variable. Approx 30°C/86°F.",
+        "activities": [
+          "Check out of hotel.",
+          "Last-minute souvenir shopping at Changi Airport Jewel.",
+          "Explore the Canopy Park at Jewel Changi before flight."
+        ],
+        "attractions": [
+          {
+            "name": "Changi Airport Jewel",
+            "source": "user-selected"
+          },
+          {
+            "name": "Canopy Park",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Budget for airport transit and final purchases."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable t-shirts (moisture-wicking)",
+          "Shorts and casual trousers",
+          "Lightweight long-sleeve shirts for sun protection and temple visits",
+          "Comfortable walking shoes/sneakers",
+          "Sandals or flip-flops",
+          "Light rain jacket or compact umbrella",
+          "Swimwear",
+          "Modest clothing for temple visits (shoulders and knees covered)",
+          "Socks and underwear",
+          "Sleepwear"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Universal power adapter (Type G)",
+          "Portable power bank",
+          "Waterproof phone case or dry bag",
+          "Camera with extra memory cards",
+          "Headphones"
+        ]
+      },
+      {
+        "name": "Toiletries & Health",
+        "items": [
+          "High SPF sunscreen",
+          "Insect repellent",
+          "Personal medications",
+          "Hand sanitizer",
+          "Biodegradable wet wipes",
+          "Travel-sized toiletries (shampoo, soap, etc.)",
+          "Lip balm with SPF"
+        ]
+      },
+      {
+        "name": "Documents & Money",
+        "items": [
+          "Passport and visas",
+          "Printed itinerary and accommodation details",
+          "Flight tickets/e-tickets",
+          "Credit/debit cards",
+          "Local currency (SGD) for small vendors",
+          "Travel insurance documents"
+        ]
+      },
+      {
+        "name": "Miscellaneous",
+        "items": [
+          "Reusable water bottle",
+          "Small daypack/backpack",
+          "Eye mask and earplugs for flights/hotels",
+          "Snacks for travel days",
+          "Tissues or paper handkerchiefs"
+        ]
+      }
+    ]
+  }
+}

@@ -107,6 +107,11 @@
             <li><%= activity %></li>
           <% }) %>
         </ul>
+      <article class="agent-card">
+        <p class="eyebrow">Agent 5</p>
+        <h2>Spending Agent</h2>
+        <p><%= tripPlan.spending %></p>
+      </article>
 
         <% const attractionsForDay = Array.isArray(day.attractions) ? day.attractions : []; %>
         <% if (attractionsForDay.length) { %>
@@ -128,21 +133,27 @@
     <% }) %>
   </section>
 
-  <section class="tool-panel budget-handoff">
-    <div>
-      <p class="eyebrow">Budget segment</p>
-      <h2>Turn this itinerary into a spending plan</h2>
-      <p>Send the generated itinerary and your trip budget to the dedicated budget planner.</p>
-    </div>
+<% } %>
 
-    <form action="/budget/plan" method="post">
-      <input type="hidden" name="destination" value="<%= destination %>">
-      <input type="hidden" name="budget" value="<%= budget %>">
-      <input type="hidden" name="travelDates" value="<%= travelDates %>">
-      <input type="hidden" name="days" value="<%= days %>">
-      <textarea name="itineraryJson" hidden><%= JSON.stringify(dayCards) %></textarea>
-      <button type="submit">Open budget planner</button>
-    </form>
+<% if (packingList && packingList.categories) { %>
+  <section class="section-header">
+    <div>
+      <p class="eyebrow">Generated</p>
+      <h2>Recommended Packing List</h2>
+    </div>
+  </section>
+
+  <section class="day-grid">
+    <% packingList.categories.forEach(category => { %>
+      <article class="day-card">
+        <h3><%= category.name %></h3>
+        <ul>
+          <% category.items.forEach(item => { %>
+            <li><%= item %></li>
+          <% }) %>
+        </ul>
+      </article>
+    <% }) %>
   </section>
 <% } %>
 
