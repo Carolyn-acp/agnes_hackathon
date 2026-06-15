@@ -11,6 +11,19 @@ const normalizeTripPlanForView = (tripPlan) => {
   return null;
 };
 
+const calculateDays = (startDate, endDate) => {
+  const start = new Date(`${startDate}T00:00:00`);
+  const end = new Date(`${endDate}T00:00:00`);
+
+  if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime()) || end < start) {
+    return '';
+  }
+
+  const millisecondsPerDay = 24 * 60 * 60 * 1000;
+
+  return String(Math.round((end - start) / millisecondsPerDay) + 1);
+};
+
 const renderAgnes = (res, options = {}) => {
   res.render('agnes', {
     title: 'Agnes AI',
@@ -20,6 +33,8 @@ const renderAgnes = (res, options = {}) => {
     budget: '',
     days: '',
     places: '',
+    startDate: '',
+    endDate: '',
     travelDates: '',
     tripPlan: null,
     budgetPlan: null,
@@ -49,11 +64,13 @@ exports.generateTrip = async (req, res) => {
   const city = req.body.city && req.body.city.trim();
   const destination = [city, country].filter(Boolean).join(', ') || (req.body.destination && req.body.destination.trim());
   const budget = req.body.budget && req.body.budget.trim();
-  const days = req.body.days && req.body.days.trim();
   const places = req.body.places && req.body.places.trim();
-  const travelDates = req.body.travelDates && req.body.travelDates.trim();
+  const startDate = req.body.startDate && req.body.startDate.trim();
+  const endDate = req.body.endDate && req.body.endDate.trim();
+  const days = startDate && endDate ? calculateDays(startDate, endDate) : '';
+  const travelDates = startDate && endDate ? `${startDate} to ${endDate}` : '';
 
-  if (!destination || !budget || !days) {
+  if (!destination || !budget || !days || !startDate || !endDate) {
     renderAgnes(res, {
       country,
       city,
@@ -61,8 +78,10 @@ exports.generateTrip = async (req, res) => {
       budget,
       days,
       places,
+      startDate,
+      endDate,
       travelDates,
-      error: 'Enter a country, city, budget, and number of days.'
+      error: 'Enter a country, city, budget, start date, and end date.'
     });
     return;
   }
@@ -88,6 +107,8 @@ exports.generateTrip = async (req, res) => {
       budget,
       days,
       places,
+      startDate,
+      endDate,
       travelDates,
       weatherNotes,
       wardrobe,
@@ -105,6 +126,8 @@ exports.generateTrip = async (req, res) => {
       budget,
       days,
       places,
+      startDate,
+      endDate,
       travelDates,
       error: error.message
     });

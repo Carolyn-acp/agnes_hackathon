@@ -2,6 +2,12 @@ const restCountriesBase = () => process.env.RESTCOUNTRIES_API_BASE || 'https://a
 
 const getRestCountriesApiKey = () => process.env.RESTCOUNTRIES_API_KEY;
 
+const cityStateCountries = new Set([
+  'singapore',
+  'monaco',
+  'vatican city'
+]);
+
 const normalizeCountryName = (country) => {
   if (typeof country === 'string') {
     return country;
@@ -84,6 +90,10 @@ exports.getCountries = async (query = '') => {
 };
 
 exports.getCities = async (country) => {
+  if (cityStateCountries.has(country.trim().toLowerCase())) {
+    return [country.trim()];
+  }
+
   const response = await fetch(
     process.env.CITIES_API_ENDPOINT || 'https://countriesnow.space/api/v0.1/countries/cities',
     {

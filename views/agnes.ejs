@@ -35,14 +35,25 @@
         <input name="budget" type="text" placeholder="$1200 for 5 days" value="<%= budget %>" required>
       </label>
 
-      <label>
-        Days
-        <input name="days" type="number" min="1" max="30" placeholder="5" value="<%= days %>" required>
-      </label>
+      <fieldset class="date-range">
+        <legend>Trip dates</legend>
+        <div class="date-range-inputs">
+          <label>
+            Start
+            <input name="startDate" type="date" value="<%= startDate %>" data-start-date required>
+          </label>
+
+          <label>
+            End
+            <input name="endDate" type="date" value="<%= endDate %>" data-end-date required>
+          </label>
+        </div>
+      </fieldset>
 
       <label>
-        Dates
-        <input name="travelDates" type="text" placeholder="July 3-7" value="<%= travelDates %>">
+        Days
+        <input name="days" type="number" min="1" max="30" placeholder="Auto" value="<%= days %>" data-days-input readonly required>
+        <span class="field-status" data-days-status>Choose start and end dates.</span>
       </label>
     </div>
 
