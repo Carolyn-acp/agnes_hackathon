@@ -207,6 +207,52 @@ textarea {
   border-radius: 8px;
 }
 
+.trip-builder {
+  margin-bottom: 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-grid label,
+.trip-builder label {
+  display: grid;
+  gap: 8px;
+}
+
+.agent-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.agent-card {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.agent-card h2 {
+  margin: 0 0 12px;
+}
+
+.agent-card p {
+  white-space: pre-wrap;
+}
+
+.weather-card {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(21, 94, 239, 0.12);
+}
+
+.inline-error {
+  color: #8a1f11;
+}
+
 .item-list {
   display: grid;
   gap: 12px;
@@ -237,6 +283,11 @@ textarea {
   }
 
   .agnes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid,
+  .agent-results {
     grid-template-columns: 1fr;
   }
 

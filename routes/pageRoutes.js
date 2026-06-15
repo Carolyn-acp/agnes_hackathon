@@ -8,6 +8,7 @@ router.get('/', pageController.showHome);
 router.get('/items', pageController.listItems);
 router.post('/items', pageController.createItem);
 router.get('/agnes', agnesController.showAgnes);
+router.post('/agnes/trip', agnesController.generateTrip);
 router.post('/agnes/text', agnesController.generateText);
 router.post('/agnes/image', agnesController.generateImage);
 

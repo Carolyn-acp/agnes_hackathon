@@ -3,10 +3,17 @@ const agnesService = require('../services/agnesService');
 const renderAgnes = (res, options = {}) => {
   res.render('agnes', {
     title: 'Agnes AI',
+    destination: '',
+    budget: '',
+    travelDates: '',
+    weatherNotes: '',
+    wardrobe: '',
+    tripPlan: null,
     textPrompt: '',
     imagePrompt: '',
     textResult: '',
     imageResult: '',
+    visualError: '',
     error: '',
     ...options
   });
@@ -14,6 +21,67 @@ const renderAgnes = (res, options = {}) => {
 
 exports.showAgnes = (req, res) => {
   renderAgnes(res);
+};
+
+exports.generateTrip = async (req, res) => {
+  const destination = req.body.destination && req.body.destination.trim();
+  const budget = req.body.budget && req.body.budget.trim();
+  const travelDates = req.body.travelDates && req.body.travelDates.trim();
+  const weatherNotes = req.body.weatherNotes && req.body.weatherNotes.trim();
+  const wardrobe = req.body.wardrobe && req.body.wardrobe.trim();
+
+  if (!destination || !budget) {
+    renderAgnes(res, {
+      destination,
+      budget,
+      travelDates,
+      weatherNotes,
+      wardrobe,
+      error: 'Enter at least a destination and budget.'
+    });
+    return;
+  }
+
+  try {
+    const tripPlan = await agnesService.generateTripPlan({
+      destination,
+      budget,
+      travelDates,
+      weatherNotes,
+      wardrobe
+    });
+
+    let imageResult = '';
+    let visualError = '';
+
+    if (tripPlan.outfitPrompt) {
+      try {
+        imageResult = await agnesService.generateImage(tripPlan.outfitPrompt);
+      } catch (error) {
+        visualError = error.message;
+      }
+    }
+
+    renderAgnes(res, {
+      destination,
+      budget,
+      travelDates,
+      weatherNotes,
+      wardrobe,
+      tripPlan,
+      imageResult,
+      visualError
+    });
+  } catch (error) {
+    renderAgnes(res, {
+      destination,
+      budget,
+      travelDates,
+      weatherNotes,
+      wardrobe,
+      error: error.message
+    });
+  }
 };
 
 exports.generateText = async (req, res) => {
