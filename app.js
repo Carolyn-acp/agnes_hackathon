@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const pageRoutes = require('../routes/pageRoutes');
+const pageRoutes = require('./routes/pageRoutes');
 
 const app = express();
 

@@ -140,6 +140,73 @@ input {
   font: inherit;
 }
 
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  resize: vertical;
+}
+
+.agnes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tool-panel {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.tool-panel h2 {
+  margin: 0 0 16px;
+}
+
+.tool-panel form {
+  display: grid;
+  gap: 12px;
+}
+
+.tool-panel label {
+  font-weight: 700;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.result-box h3 {
+  margin: 0 0 8px;
+}
+
+.result-box p {
+  white-space: pre-wrap;
+}
+
+.generated-image {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.alert {
+  padding: 12px 16px;
+  color: #8a1f11;
+  background: #fff1ef;
+  border: 1px solid #ffc9c0;
+  border-radius: 8px;
+}
+
 .item-list {
   display: grid;
   gap: 12px;
@@ -167,6 +234,10 @@ input {
   .form-row {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .agnes-grid {
+    grid-template-columns: 1fr;
   }
 
   nav {
