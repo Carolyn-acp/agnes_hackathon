@@ -1,4 +1,6 @@
 const agnesService = require('../services/agnesService');
+const fs = require('fs');
+const path = require('path');
 const itineraryModel = require('../models/itineraryModel');
 
 const normalizeTripPlanForView = (tripPlan) => {
@@ -35,6 +37,7 @@ const renderAgnes = (res, options = {}) => {
     endDate: '',
     travelDates: '',
     tripPlan: null,
+    packingList: null,
     textPrompt: '',
     imagePrompt: '',
     textResult: '',
@@ -42,7 +45,8 @@ const renderAgnes = (res, options = {}) => {
     savedItinerary: null,
     error: '',
     ...options,
-    tripPlan: options.tripPlan ? normalizeTripPlanForView(options.tripPlan) : options.tripPlan || null
+    tripPlan: options.tripPlan ? normalizeTripPlanForView(options.tripPlan) : options.tripPlan || null,
+    packingList: options.packingList || null
   });
 };
 
@@ -85,6 +89,32 @@ exports.generateTrip = async (req, res) => {
       places,
       travelDates,
     });
+
+    const packingList = await agnesService.generatePackingList({
+      destination,
+      travelDates,
+      days,
+      tripPlan
+    });
+
+    // Create a data directory if it doesn't exist
+    const dataDir = path.join(__dirname, '../data');
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+
+    // Generate a unique filename and write the JSON file
+    const sanitizedDest = destination.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    const fileName = `itinerary_${sanitizedDest}_${Date.now()}.json`;
+    const filePath = path.join(dataDir, fileName);
+
+    const itineraryData = {
+      destination,
+      travelDates,
+      tripPlan,
+      packingList
+    };
+    fs.writeFileSync(filePath, JSON.stringify(itineraryData, null, 2));
     const savedItinerary = itineraryModel.create({
       input: {
         country,
@@ -111,6 +141,7 @@ exports.generateTrip = async (req, res) => {
       endDate,
       travelDates,
       tripPlan,
+      packingList,
       savedItinerary
     });
   } catch (error) {

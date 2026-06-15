@@ -1,0 +1,139 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-16 to 2026-06-19",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Iconic Gardens and Marina Bay",
+        "weather": "Partly cloudy, 31°C (88°F), 80% chance of afternoon thunderstorm.",
+        "activities": [
+          "Visit Gardens by the Bay and Cloud Forest",
+          "Walk across Marina Bay Sands SkyPark Observation Deck",
+          "Watch Spectra Light and Water Show at Marina Bay"
+        ],
+        "attractions": [
+          {
+            "name": "Gardens by the Bay",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Marina Bay Sands",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Attraction tickets approx. SGD 53. Transport via MRT ~SGD 2."
+      },
+      {
+        "day": 2,
+        "title": "Cultural Heritage in Chinatown",
+        "weather": "Hot and humid, 32°C (90°F), scattered showers expected.",
+        "activities": [
+          "Explore Buddha Tooth Relic Temple and Museum",
+          "Browse shops and street food at Pagoda Street",
+          "Visit Chinatown Heritage Centre"
+        ],
+        "attractions": [
+          {
+            "name": "Chinatown",
+            "source": "user-selected"
+          }
+        ],
+        "budgetNote": "Temple entry free. Food budget approx. SGD 25. Total attraction costs minimal."
+      },
+      {
+        "day": 3,
+        "title": "Nature and Shopping at Jewel Changi",
+        "weather": "Cloudy with high humidity, 30°C (86°F).",
+        "activities": [
+          "Visit HSBC Rain Vortex at Jewel Changi Airport",
+          "Explore Canopy Park at Jewel",
+          "Enjoy dining options within Jewel complex"
+        ],
+        "attractions": [
+          {
+            "name": "Jewel",
+            "source": "user-selected"
+          }
+        ],
+        "budgetNote": "Rain Vortex viewing is free. Canopy Park ticket approx. SGD 27. Dining budget approx. SGD 40."
+      },
+      {
+        "day": 4,
+        "title": "Northern Frontier and Local Life",
+        "weather": "Tropical rain likely, 29°C (84°F), 90% chance of precipitation.",
+        "activities": [
+          "Visit Woodlands Checkpoint area for local vibes",
+          "Explore Kranji War Memorial nearby",
+          "Dine at local hawker centers near Woodlands"
+        ],
+        "attractions": [
+          {
+            "name": "Woodlands",
+            "source": "user-selected"
+          },
+          {
+            "name": "Kranji War Memorial",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "War Memorial entry free. Transport via bus/train ~SGD 3. Food budget approx. SGD 15."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable t-shirts",
+          "Shorts or light trousers",
+          "Comfortable walking shoes",
+          "Sandals or flip-flops",
+          "Lightweight long-sleeve shirt for air-conditioned malls/temples",
+          "Swimwear (optional for hotel pool)",
+          "Undergarments and socks for 4 days",
+          "Light jacket or cardigan"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Universal power adapter",
+          "Portable phone charger/power bank",
+          "Smartphone with maps offline installed"
+        ]
+      },
+      {
+        "name": "Toiletries & Health",
+        "items": [
+          "High SPF sunscreen",
+          "Insect repellent",
+          "Personal medications",
+          "Hand sanitizer",
+          "Travel-sized toiletries",
+          "Pain relievers"
+        ]
+      },
+      {
+        "name": "Accessories & Gear",
+        "items": [
+          "Compact umbrella or lightweight rain poncho",
+          "Small daypack or crossbody bag",
+          "Reusable water bottle",
+          "Sunglasses",
+          "Hat or cap"
+        ]
+      },
+      {
+        "name": "Documents & Money",
+        "items": [
+          "Passport and visa (if required)",
+          "Travel insurance details",
+          "Credit/debit cards",
+          "Some SGD cash for hawker centers and small vendors"
+        ]
+      }
+    ]
+  }
+}

@@ -128,5 +128,698 @@
         }
       ]
     }
+  },
+  {
+    "id": "3618ba69-b74f-4c7d-ac84-0cc644895820",
+    "createdAt": "2026-06-15T07:44:22.834Z",
+    "input": {
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "destination": "Hong Kong, Hong Kong",
+      "budget": "2400",
+      "days": "6",
+      "places": [
+        "tram"
+      ],
+      "startDate": "2026-06-27",
+      "endDate": "2026-07-02",
+      "travelDates": "2026-06-27 to 2026-07-02"
+    },
+    "tripPlan": {
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival and Victoria Harbour Lights",
+          "weather": "Hot and humid, ~30°C, chance of afternoon thunderstorms.",
+          "activities": [
+            "Check into hotel in Tsim Sha Tsui or Mong Kok.",
+            "Walk along Tsim Sha Tsui Promenade for sunset views.",
+            "Watch the Symphony of Lights show."
+          ],
+          "attractions": [
+            {
+              "name": "Tsim Sha Tsui Promenade",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Star Ferry Pier",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Low cost: Accommodation deposit and ferry ride (HK$2.6)."
+        },
+        {
+          "day": 2,
+          "title": "Central Heritage and Peak Views",
+          "weather": "Partly cloudy, ~29°C.",
+          "activities": [
+            "Explore Central district heritage buildings.",
+            "Take the Peak Tram to Victoria Peak.",
+            "Dinner at a local dim sum restaurant."
+          ],
+          "attractions": [
+            {
+              "name": "Garden Road and Pedder Street",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "The Peak Tower",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Moderate: Peak Tram round-trip (~HK$128) and lunch."
+        },
+        {
+          "day": 3,
+          "title": "Kowloon Culture and Street Food",
+          "weather": "Rainy, ~28°C.",
+          "activities": [
+            "Visit Hong Kong Museum of History.",
+            "Wander through Mong Kok's Ladies Market.",
+            "Try street food in Yau Ma Tei."
+          ],
+          "attractions": [
+            {
+              "name": "Hong Kong Museum of History",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Ladies Market",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Low cost: Free museum entry and affordable street snacks."
+        },
+        {
+          "day": 4,
+          "title": "Island Hopping and Nature",
+          "weather": "Sunny, ~31°C.",
+          "activities": [
+            "Take a ferry to Lantau Island.",
+            "Visit Po Lin Monastery and Big Buddha.",
+            "Explore Tai O fishing village."
+          ],
+          "attractions": [
+            {
+              "name": "Ngong Ping 360 Cable Car",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Tai O",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "High cost: Ngong Ping 360 ticket (~HK$390). Budget conscious alternative: Take public bus instead of cable car."
+        },
+        {
+          "day": 5,
+          "title": "Shopping and Modern HK",
+          "weather": "Hot, ~32°C.",
+          "activities": [
+            "Shop in Causeway Bay.",
+            "Visit K11 MUSEA for art and design.",
+            "Evening cruise or waterfront dining."
+          ],
+          "attractions": [
+            {
+              "name": "Causeway Bay Shopping District",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "K11 MUSEA",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Variable: Depends on shopping choices. Free entry to malls and museums."
+        },
+        {
+          "day": 6,
+          "title": "Departure and Last Souvenirs",
+          "weather": "Cloudy, ~30°C.",
+          "activities": [
+            "Final breakfast at local cafe.",
+            "Buy souvenirs at Union Square or airport duty-free.",
+            "Head to airport for departure."
+          ],
+          "attractions": [
+            {
+              "name": "Union Square",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Low cost: Last meal and transit."
+        }
+      ]
+    }
+  },
+  {
+    "id": "cabb5130-ca02-4307-a4ad-f45308f1a6d5",
+    "createdAt": "2026-06-15T07:49:51.081Z",
+    "input": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "destination": "Singapore, Singapore",
+      "budget": "3000",
+      "days": "8",
+      "places": [
+        "vivo city",
+        "jewel",
+        "orchard road"
+      ],
+      "startDate": "2026-06-24",
+      "endDate": "2026-07-01",
+      "travelDates": "2026-06-24 to 2026-07-01"
+    },
+    "tripPlan": {
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival and Marina Bay Glow",
+          "weather": "Seasonal estimate: Hot and humid, 26-31°C, with a chance of brief afternoon thunderstorms.",
+          "activities": [
+            "Check into accommodation and settle in.",
+            "Walk along the Marina Bay promenade to see the Financial District skyline.",
+            "Enjoy dinner at a local hawker center for affordable local cuisine."
+          ],
+          "attractions": [
+            {
+              "name": "Marina Bay Sands",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Supertree Grove",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Initial setup costs; meals kept low-cost at hawker centers to preserve budget."
+        },
+        {
+          "day": 2,
+          "title": "Cultural Heritage in Chinatown and Little India",
+          "weather": "Seasonal estimate: Hot and humid, 26-31°C, intermittent showers.",
+          "activities": [
+            "Explore Buddha Tooth Relic Temple and Chinatown shops.",
+            "Visit Sri Veeramakaliamman Temple in Little India.",
+            "Stroll through Mustafa Centre for a diverse shopping experience."
+          ],
+          "attractions": [
+            {
+              "name": "Buddha Tooth Relic Temple",
+              "source": "user-selected"
+            },
+            {
+              "name": "Little India AR Centre",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Most temples are free to enter; shopping offers a range of price points."
+        },
+        {
+          "day": 3,
+          "title": "Nature and Gardens by the Bay",
+          "weather": "Seasonal estimate: Hot and humid, 26-31°C, high humidity.",
+          "activities": [
+            "Explore the Cloud Forest and Flower Dome.",
+            "Walk through the OCBC Skyway among the Supertrees.",
+            "Visit the Singapore River districts for a sunset boat ride."
+          ],
+          "attractions": [
+            {
+              "name": "Gardens by the Bay",
+              "source": "user-selected"
+            },
+            {
+              "name": "Merlion Park",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Gardens by the Bay conservatories are a significant expense; book tickets in advance for discounts."
+        },
+        {
+          "day": 4,
+          "title": "Sentosa Island Adventure",
+          "weather": "Seasonal estimate: Hot and humid, 27-32°C, slight chance of rain.",
+          "activities": [
+            "Take the Sentosa Express cable car to the island.",
+            "Visit Universal Studios Singapore.",
+            "Relax at Siloso Beach in the evening."
+          ],
+          "attractions": [
+            {
+              "name": "Universal Studios Singapore",
+              "source": "user-selected"
+            },
+            {
+              "name": "S.E.A. Aquarium",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Theme park tickets are pricey; consider a combo pass if visiting multiple attractions."
+        },
+        {
+          "day": 5,
+          "title": "Colonial History and Art",
+          "weather": "Seasonal estimate: Hot and humid, 26-31°C, occasional showers.",
+          "activities": [
+            "Tour the National Museum of Singapore.",
+            "Explore the Civic District and Raffles Hotel.",
+            "Visit the National Gallery for Southeast Asian art."
+          ],
+          "attractions": [
+            {
+              "name": "National Gallery Singapore",
+              "source": "user-selected"
+            },
+            {
+              "name": "Raffles Hotel",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Gallery entry is free for first-time visitors (check current promotions); coffee at Raffles is splurge-worthy."
+        },
+        {
+          "day": 6,
+          "title": "Nature and Wildlife at Night",
+          "weather": "Seasonal estimate: Hot and humid, 26-31°C, high humidity.",
+          "activities": [
+            "Spend the morning at the Singapore Zoo.",
+            "Have lunch at River Wonders.",
+            "End the day with a night safari experience or light dinner in East Coast Park."
+          ],
+          "attractions": [
+            {
+              "name": "Singapore Zoo",
+              "source": "user-selected"
+            },
+            {
+              "name": "East Coast Park",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Zoo entry is included in the budget; consider packed lunches to save on dining costs."
+        },
+        {
+          "day": 7,
+          "title": "Shopping and Last Minute Gems",
+          "weather": "Seasonal estimate: Hot and humid, 26-31°C, low chance of rain.",
+          "activities": [
+            "Browse for souvenirs at Orchard Road or Jewel Changi Airport.",
+            "Visit the ArtScience Museum.",
+            "Enjoy a farewell dinner at a hawker center or casual local eatery."
+          ],
+          "attractions": [
+            {
+              "name": "ArtScience Museum",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Jewel Changi Airport",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Shopping budget varies; focus on free attractions like the Rain Vortex at Jewel."
+        },
+        {
+          "day": 8,
+          "title": "Departure and Reflection",
+          "weather": "Seasonal estimate: Hot and humid, 26-31°C, generally clear skies.",
+          "activities": [
+            "Final breakfast at a local kopitiam.",
+            "Early departure to Changi Airport.",
+            "Explore Jewel Changi’s indoor forest before flight."
+          ],
+          "attractions": [
+            {
+              "name": "Jewel Changi Airport",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Minimal costs for the final day; ensure luggage storage fees are accounted for if needed."
+        }
+      ]
+    }
+  },
+  {
+    "id": "4daccbc9-1892-4b0a-bb1c-769de501dd1e",
+    "createdAt": "2026-06-15T07:53:53.187Z",
+    "input": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "destination": "Singapore, Singapore",
+      "budget": "3000",
+      "days": "8",
+      "places": [
+        "vivo city",
+        "jewel",
+        "orchard road"
+      ],
+      "startDate": "2026-06-24",
+      "endDate": "2026-07-01",
+      "travelDates": "2026-06-24 to 2026-07-01"
+    },
+    "tripPlan": {
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival and Marina Bay Introduction",
+          "weather": "Tropical; hot and humid with a chance of afternoon thunderstorms. Approx 31°C/88°F.",
+          "activities": [
+            "Check into hotel and freshen up.",
+            "Walk along Marina Bay Promenade to see the Merlion Park.",
+            "Enjoy dinner at a hawker center near Chinatown or Little India."
+          ],
+          "attractions": [
+            {
+              "name": "Merlion Park",
+              "source": "user-selected"
+            },
+            {
+              "name": "Marina Bay Sands SkyPark Observation Deck",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Accommodation deposit and initial meals. Budget for transport via MRT."
+        },
+        {
+          "day": 2,
+          "title": "Cultural Heritage: Chinatown and Little India",
+          "weather": "Tropical; sunny intervals with high humidity. Approx 32°C/90°F.",
+          "activities": [
+            "Visit Buddha Tooth Relic Temple in Chinatown.",
+            "Explore street art and shops in Haji Lane.",
+            "Wander through Little India, visiting Sri Veeramakaliamman Temple."
+          ],
+          "attractions": [
+            {
+              "name": "Buddha Tooth Relic Temple",
+              "source": "user-selected"
+            },
+            {
+              "name": "Haji Lane",
+              "source": "user-selected"
+            },
+            {
+              "name": "Little India ARTEAL",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Free entry for most cultural sites. Budget for local shopping and modest dining."
+        },
+        {
+          "day": 3,
+          "title": "Nature and Gardens",
+          "weather": "Tropical; partly cloudy with possible rain showers. Approx 31°C/88°F.",
+          "activities": [
+            "Spend the morning at Gardens by the Bay, focusing on Cloud Forest and Flower Dome.",
+            "Watch the Garden Rhapsody light show at Supertree Grove in the evening.",
+            "Dinner at a nearby restaurant in Bayfront area."
+          ],
+          "attractions": [
+            {
+              "name": "Gardens by the Bay",
+              "source": "user-selected"
+            },
+            {
+              "name": "Supertree Grove Light Show",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Gardens by the Bay conservatories require tickets. Allocate significant budget here."
+        },
+        {
+          "day": 4,
+          "title": "Sentosa Island Adventure",
+          "weather": "Tropical; warm and breezy. Approx 32°C/90°F.",
+          "activities": [
+            "Take the Sentosa Express or cable car to the island.",
+            "Visit Universal Studios Singapore for half-day fun.",
+            "Relax at Siloso Beach or enjoy the S.E.A. Aquarium."
+          ],
+          "attractions": [
+            {
+              "name": "Universal Studios Singapore",
+              "source": "user-selected"
+            },
+            {
+              "name": "S.E.A. Aquarium",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Theme park and aquarium tickets are expensive. Consider combo passes."
+        },
+        {
+          "day": 5,
+          "title": "Modern Art and Shopping",
+          "weather": "Tropical; hot and humid. Approx 31°C/88°F.",
+          "activities": [
+            "Explore the National Gallery Singapore housed in the former Supreme Court and City Hall.",
+            "Head to Orchard Road for world-class shopping.",
+            "Dinner at a trendy spot in Joo Chiat/Katong for Peranakan cuisine."
+          ],
+          "attractions": [
+            {
+              "name": "National Gallery Singapore",
+              "source": "user-selected"
+            },
+            {
+              "name": "Orchard Road Shopping Belt",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Gallery entry may have fees. Shopping budget depends on personal interest."
+        },
+        {
+          "day": 6,
+          "title": "Zoo and Night Safari",
+          "weather": "Tropical; evening might be cooler but still humid. Approx 30°C/86°F.",
+          "activities": [
+            "Visit the Singapore Zoo during the day to see open-concept exhibits.",
+            "Have lunch at the zoo's food court.",
+            "Experience the Night Safari, the world's first nighttime wildlife park."
+          ],
+          "attractions": [
+            {
+              "name": "Singapore Zoo",
+              "source": "user-selected"
+            },
+            {
+              "name": "Night Safari",
+              "source": "user-selected"
+            }
+          ],
+          "budgetNote": "Both zoos require substantial ticket budgets. Book online in advance for discounts."
+        },
+        {
+          "day": 7,
+          "title": "Raffles Place and Colonial History",
+          "weather": "Tropical; sunny with isolated showers. Approx 31°C/88°F.",
+          "activities": [
+            "Walk around Raffles Place and see the Fullerton Hotel.",
+            "Visit the Asian Civilisations Museum.",
+            "Enjoy a farewell dinner at a Michelin-starred hawker stall or local fine dining."
+          ],
+          "attractions": [
+            {
+              "name": "Fullerton Hotel",
+              "source": "user-selected"
+            },
+            {
+              "name": "Asian Civilisations Museum",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Museum entry is affordable. Farewell dinner can vary widely in cost."
+        },
+        {
+          "day": 8,
+          "title": "Departure and Last-Minute Souvenirs",
+          "weather": "Tropical; variable. Approx 30°C/86°F.",
+          "activities": [
+            "Check out of hotel.",
+            "Last-minute souvenir shopping at Changi Airport Jewel.",
+            "Explore the Canopy Park at Jewel Changi before flight."
+          ],
+          "attractions": [
+            {
+              "name": "Changi Airport Jewel",
+              "source": "user-selected"
+            },
+            {
+              "name": "Canopy Park",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Budget for airport transit and final purchases."
+        }
+      ]
+    }
+  },
+  {
+    "id": "184e0880-51e6-4c3e-8d7f-6d5816d1f5e1",
+    "createdAt": "2026-06-15T07:55:54.816Z",
+    "input": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "destination": "Singapore, Singapore",
+      "budget": "5000",
+      "days": "7",
+      "places": [
+        "sentosa"
+      ],
+      "startDate": "2026-06-19",
+      "endDate": "2026-06-25",
+      "travelDates": "2026-06-19 to 2026-06-25"
+    },
+    "tripPlan": {
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival and Marina Bay Lights",
+          "weather": "Tropical, 27°C, Partly Cloudy with chance of evening rain.",
+          "activities": [
+            "Check into hotel and freshen up.",
+            "Walk along Marina Bay Promenade and view the Merlion.",
+            "Watch the Spectra Light & Water Show at 8 PM."
+          ],
+          "attractions": [
+            {
+              "name": "Marina Bay Sands",
+              "source": "user-selected"
+            },
+            {
+              "name": "Gardens by the Bay",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Accommodation deposit paid. Low-cost walking activities today."
+        },
+        {
+          "day": 2,
+          "title": "Cultural Heritage in Little India and Kampong Glam",
+          "weather": "Tropical, 28°C, Humid, Sunny intervals.",
+          "activities": [
+            "Explore Tekka Centre for breakfast and local spices.",
+            "Visit Sultan Mosque and Haji Lane for boutique shopping.",
+            "Dinner at a local hawker center in the area."
+          ],
+          "attractions": [
+            {
+              "name": "Little India",
+              "source": "user-selected"
+            },
+            {
+              "name": "Kampong Glam",
+              "source": "user-selected"
+            }
+          ],
+          "budgetNote": "Budget-friendly food options available at hawker centers."
+        },
+        {
+          "day": 3,
+          "title": "Nature and Conservation at River Wonders",
+          "weather": "Tropical, 27°C, Overcast with afternoon showers.",
+          "activities": [
+            "Visit River Wonders to see Asian river ecosystems.",
+            "Stroll through the adjacent Singapore Zoo area (exterior views).",
+            "Light dinner near Mandai Road."
+          ],
+          "attractions": [
+            {
+              "name": "River Wonders",
+              "source": "user-selected"
+            },
+            {
+              "name": "Singapore Zoo",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Attraction tickets consume a significant portion of daily budget."
+        },
+        {
+          "day": 4,
+          "title": "Chinatown History and Food Tour",
+          "weather": "Tropical, 28°C, Clear skies, Hot.",
+          "activities": [
+            "Visit Buddha Tooth Relic Temple.",
+            "Explore Chinatown Complex Food Centre.",
+            "Browse street art and shops on Pagoda Street."
+          ],
+          "attractions": [
+            {
+              "name": "Chinatown",
+              "source": "user-selected"
+            },
+            {
+              "name": "National Gallery Singapore",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Free entry to temples and galleries; focus spending on food."
+        },
+        {
+          "day": 5,
+          "title": "Sentosa Island Leisure",
+          "weather": "Tropical, 29°C, Sunny, Breezy.",
+          "activities": [
+            "Take the Sentosa Express cable car or monorail.",
+            "Relax at Siloso Beach.",
+            "Visit Universal Studios Singapore or S.E.A. Aquarium."
+          ],
+          "attractions": [
+            {
+              "name": "Sentosa Island",
+              "source": "user-selected"
+            },
+            {
+              "name": "Universal Studios Singapore",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "High cost day due to theme park tickets and transport."
+        },
+        {
+          "day": 6,
+          "title": "Modern Art and Shopping at Orchard Road",
+          "weather": "Tropical, 28°C, Partly Cloudy.",
+          "activities": [
+            "Visit ArtScience Museum for interactive exhibits.",
+            "Shopping spree atION Orchard or Takashimaya.",
+            "Late night supper at Lau Pa Sat."
+          ],
+          "attractions": [
+            {
+              "name": "Orchard Road",
+              "source": "user-selected"
+            },
+            {
+              "name": "ArtScience Museum",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Flexible budget for shopping; control spending on souvenirs."
+        },
+        {
+          "day": 7,
+          "title": "Final Souvenirs and Departure",
+          "weather": "Tropical, 27°C, Mild humidity.",
+          "activities": [
+            "Last-minute shopping at Jewel Changi Airport.",
+            "Enjoy the HSBC Rain Vortex inside Jewel.",
+            "Departure from Changi Airport."
+          ],
+          "attractions": [
+            {
+              "name": "Jewel Changi Airport",
+              "source": "user-selected"
+            },
+            {
+              "name": "Changi Airport Jewel Forest Valley",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Final expenses for meals and last-minute purchases."
+        }
+      ]
+    }
   }
 ]

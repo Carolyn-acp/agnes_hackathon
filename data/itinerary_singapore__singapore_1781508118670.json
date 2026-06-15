@@ -1,0 +1,125 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-18 to 2026-06-20",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Sentosa Island Adventure",
+        "weather": "Partly cloudy with a chance of afternoon thunderstorms. High 31°C. Seasonal estimate for June.",
+        "activities": [
+          "Morning: Visit Universal Studios Singapore and take the Skyline Luge",
+          "Afternoon: Relax at Siloso Beach or visit S.E.A. Aquarium",
+          "Evening: Attend the Wings of Time night show"
+        ],
+        "attractions": [
+          {
+            "name": "Sentosa (Universal Studios/S.E.A. Aquarium)",
+            "source": "user-selected"
+          }
+        ],
+        "budgetNote": "Focus on Sentosa attractions. Budget allows for ride passes and meals on the island."
+      },
+      {
+        "day": 2,
+        "title": "Nature & Urban Icons",
+        "weather": "Hot and humid with frequent short showers. High 32°C. Seasonal estimate for June.",
+        "activities": [
+          "Morning: Explore the Canopy Walk and free-flying birds at River Wonders/Bird Paradise",
+          "Afternoon: Return to city center, visit SMU campus and nearby ArtScience Museum",
+          "Evening: Explore Jewel Changi Airport (Shiseido Forest Valley & Rain Vortex)"
+        ],
+        "attractions": [
+          {
+            "name": "Bird Paradise",
+            "source": "user-selected"
+          },
+          {
+            "name": "SMU (Singapore Management University)",
+            "source": "user-selected"
+          },
+          {
+            "name": "Jewel Changi Airport",
+            "source": "user-selected"
+          }
+        ],
+        "budgetNote": "Free entry for Bird Paradise canopy walk and Jewel attractions helps stay within budget."
+      },
+      {
+        "day": 3,
+        "title": "City Culture & Final Explorations",
+        "weather": "Thunderstorms likely in the late afternoon. High 31°C. Seasonal estimate for June.",
+        "activities": [
+          "Morning: Guided walking tour or self-exploration of SMU and Raffles Place",
+          "Afternoon: Visit Marina Bay Sands area or Clarke Quay for shopping and drinks",
+          "Evening: Farewell dinner at a local hawker center or casual restaurant"
+        ],
+        "attractions": [
+          {
+            "name": "SMU (Singapore Management University)",
+            "source": "user-selected"
+          }
+        ],
+        "budgetNote": "Evening activities kept low-cost to preserve budget from Days 1-2."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable shirts (short-sleeve)",
+          "Comfortable shorts or lightweight trousers",
+          "Swimwear",
+          "Cover-ups for beach/pool",
+          "Light jacket or cardigan for heavy air-conditioned indoor spaces (malls, museums, Jewel)",
+          "Comfortable walking shoes/sneakers",
+          "Sandals or water-friendly shoes",
+          "Undergarments and socks (3-4 sets)",
+          "Sleepwear"
+        ]
+      },
+      {
+        "name": "Rain Gear & Protection",
+        "items": [
+          "Compact umbrella",
+          "Lightweight rain poncho or waterproof jacket",
+          "Quick-dry towel"
+        ]
+      },
+      {
+        "name": "Toiletries & Health",
+        "items": [
+          "High-SPF sunscreen",
+          "Insect repellent",
+          "Personal medications",
+          "Basic first aid kit (plasters, antiseptic)",
+          "Hand sanitizer",
+          "Travel-sized toiletries (shampoo, conditioner, body wash)"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Phone and charger",
+          "Portable power bank",
+          "Universal travel adapter (Type G)",
+          "Waterproof phone case or dry bag",
+          "Headphones"
+        ]
+      },
+      {
+        "name": "Documents & Essentials",
+        "items": [
+          "Passport and visa documents (if required)",
+          "Digital and physical copies of itinerary",
+          "Credit/debit cards",
+          "Small amount of local currency (SGD)",
+          "Reusable water bottle",
+          "Backpack or day bag"
+        ]
+      }
+    ]
+  }
+}

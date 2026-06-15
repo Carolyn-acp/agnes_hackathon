@@ -1,0 +1,176 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-18 to 2026-06-22",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Arrival & Sentosa Introduction",
+        "weather": "Partly cloudy, 27°C. Seasonal estimate for June.",
+        "activities": [
+          "Arrive at Changi Airport, check into hotel near Marina Bay or Sentosa.",
+          "Take the Sentosa Express monorail to Sentosa Island.",
+          "Explore the beachfront area and enjoy a sunset dinner."
+        ],
+        "attractions": [
+          {
+            "name": "Sentosa Beach",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Jewel Changi Airport",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Accommodation and transport costs accounted for. Dinner budget approx SGD 50."
+      },
+      {
+        "day": 2,
+        "title": "Sentosa Adventure Day",
+        "weather": "Scattered thunderstorms, 30°C. Seasonal estimate for June.",
+        "activities": [
+          "Visit Universal Studios Singapore for half-day fun.",
+          "Relax at Siloso Beach in the afternoon.",
+          "Watch the Wings of Time night show."
+        ],
+        "attractions": [
+          {
+            "name": "Universal Studios Singapore",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Wings of Time",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "USS tickets approx SGD 75. Show tickets approx SGD 40. Total daily spend approx SGD 120."
+      },
+      {
+        "day": 3,
+        "title": "Marina Bay & VivoCity Exploration",
+        "weather": "Hot and humid, 32°C. Seasonal estimate for June.",
+        "activities": [
+          "Start at VivoCity mall for shopping and dining.",
+          "Take the cable car from VivoCity to Sentosa for views (optional) or walk to Marina Bay via Promenade.",
+          "Visit Gardens by the Bay (Cloud Forest & Flower Dome).",
+          "Walk along Marina Bay Sands promenade."
+        ],
+        "attractions": [
+          {
+            "name": "VivoCity",
+            "source": "user-selected"
+          },
+          {
+            "name": "Gardens by the Bay",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Gardens by the Bay entry approx SGD 35. Shopping budget flexible. Total daily spend approx SGD 80."
+      },
+      {
+        "day": 4,
+        "title": "Sentosa Luxury & Nature",
+        "weather": "Partly cloudy, 29°C. Seasonal estimate for June.",
+        "activities": [
+          "Visit S.E.A. Aquarium.",
+          "Lunch at a hawker center nearby for authentic local food.",
+          "Explore Adventure Cove Waterpark or relax at Palawan Beach."
+        ],
+        "attractions": [
+          {
+            "name": "S.E.A. Aquarium",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Palawan Beach",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Aquarium entry approx SGD 40. Local lunch approx SGD 10. Total daily spend approx SGD 60."
+      },
+      {
+        "day": 5,
+        "title": "Cultural Heritage & Departure",
+        "weather": "Overcast, 28°C. Seasonal estimate for June.",
+        "activities": [
+          "Visit Chinatown and Little India for cultural immersion.",
+          "Shop for souvenirs at Mustafa Centre or Orchard Road.",
+          "Head to airport for departure."
+        ],
+        "attractions": [
+          {
+            "name": "Chinatown Heritage Centre",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Mustafa Centre",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Low cost activities. Souvenir budget approx SGD 50. Total daily spend approx SGD 60."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable shirts (cotton or linen)",
+          "Shorts and casual trousers",
+          "Swimsuit",
+          "Cover-ups for beach and pool",
+          "Comfortable walking sandals",
+          "Water-resistant sneakers for thunderstorms and walking",
+          "Lightweight rain jacket or poncho",
+          "Socks and underwear",
+          "Sleepwear",
+          "Hat or cap for sun protection",
+          "Sunglasses"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Universal power adapter (Singapore uses Type G plugs)",
+          "Portable power bank",
+          "Waterproof phone pouch",
+          "Camera (optional)",
+          "Chargers for all devices"
+        ]
+      },
+      {
+        "name": "Toiletries & Health",
+        "items": [
+          "Sunscreen (high SPF)",
+          "Insect repellent",
+          "Personal hygiene items (toothbrush, toothpaste, etc.)",
+          "Basic first aid kit (band-aids, antiseptic)",
+          "Prescription medications",
+          "Hand sanitizer",
+          "Rehydration salts or electrolytes"
+        ]
+      },
+      {
+        "name": "Documents & Money",
+        "items": [
+          "Passport (valid for at least 6 months)",
+          "Travel insurance documents",
+          "Hotel and flight confirmations (digital or printed)",
+          "Credit/debit cards",
+          "Small amount of local currency (SGD) for tips and hawker centers"
+        ]
+      },
+      {
+        "name": "Accessories & Misc",
+        "items": [
+          "Reusable water bottle",
+          "Small daypack or backpack for daily excursions",
+          "Umbrella",
+          "Reusable shopping bag",
+          "Snacks for transit"
+        ]
+      }
+    ]
+  }
+}

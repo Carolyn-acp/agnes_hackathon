@@ -1,0 +1,235 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-20 to 2026-06-23",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Arrival and Chinatown Discovery",
+        "weather": "Partly cloudy with a chance of afternoon showers. High 32°C, Low 26°C. Seasonal estimate for late June.",
+        "activities": [
+          "Check into accommodation in the Chinatown/Central area.",
+          "Walk through the historic streets of Chinatown and visit the Buddha Tooth Relic Temple.",
+          "Explore the Maxwell Food Centre for dinner."
+        ],
+        "attractions": [
+          {
+            "name": "Maxwell Food Centre",
+            "source": "user-selected"
+          },
+          {
+            "name": "Buddha Tooth Relic Temple",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Accommodation and initial meals fit well within budget. Food centre meals are affordable."
+      },
+      {
+        "day": 2,
+        "title": "Marina Bay Icons and Gardens",
+        "weather": "Hot and humid with scattered thunderstorms. High 31°C, Low 26°C. Seasonal estimate for late June.",
+        "activities": [
+          "Visit the Marina Bay Sands SkyPark Observation Deck for panoramic views.",
+          "Stroll through the Gardens by the Bay, including the Cloud Forest and Flower Dome.",
+          "Enjoy the Light & Water Show at Supertree Grove in the evening."
+        ],
+        "attractions": [
+          {
+            "name": "Gardens by the Bay",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Marina Bay Sands SkyPark",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Entry fees for conservatories and SkyPark are significant but manageable within the total budget."
+      },
+      {
+        "day": 3,
+        "title": "Sentosa Island Adventure",
+        "weather": "Sunny intervals with occasional rain. High 32°C, Low 27°C. Seasonal estimate for late June.",
+        "activities": [
+          "Take the Sentosa Express monorail to the island.",
+          "Visit Universal Studios Singapore for half-day fun.",
+          "Relax at Siloso Beach in the late afternoon."
+        ],
+        "attractions": [
+          {
+            "name": "Universal Studios Singapore",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Siloso Beach",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Theme park tickets are pricey; remaining budget allows for beachside dining and transport."
+      },
+      {
+        "day": 4,
+        "title": "Cultural Heritage and Departure",
+        "weather": "Cloudy with light rain showers. High 31°C, Low 26°C. Seasonal estimate for late June.",
+        "activities": [
+          "Explore Little India for its vibrant colors and cultural sites.",
+          "Visit the Sri Veeramakaliamman Temple.",
+          "Final souvenir shopping at Orchard Road or Mustafa Centre before departure."
+        ],
+        "attractions": [
+          {
+            "name": "Little India",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Mustafa Centre",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Shopping and last-minute meals should be planned carefully to stay within the $1244 limit."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable t-shirts",
+          "Shorts and skirts",
+          "Lightweight trousers or linen pants",
+          "Comfortable walking shoes/sneakers",
+          "Sandals or flip-flops",
+          "Swimwear",
+          "Light jacket or cardigan (for heavy AC indoors)",
+          "Undergarments and socks (4 days worth)",
+          "Sleepwear"
+        ]
+      },
+      {
+        "name": "Weather Protection",
+        "items": [
+          "Compact umbrella",
+          "Portable rain poncho",
+          "Sunscreen (high SPF)",
+          "Sunglasses",
+          "Wide-brimmed hat or cap"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Phone charger and power bank",
+          "Universal travel adapter (Type G)",
+          "Camera (optional)",
+          "Headphones"
+        ]
+      },
+      {
+        "name": "Toiletries & Health",
+        "items": [
+          "Insect repellent",
+          "Personal hygiene items",
+          "Hand sanitizer",
+          "Basic first aid kit (plasters, pain relievers)",
+          "Motion sickness medication (for Sentosa Monorail/rides)"
+        ]
+      },
+      {
+        "name": "Documents & Money",
+        "items": [
+          "Passport and visa documents",
+          "Flight and hotel confirmations",
+          "Credit/debit cards",
+          "Cash (SGD for hawker centres and small vendors)",
+          "Travel insurance details"
+        ]
+      },
+      {
+        "name": "Accessories",
+        "items": [
+          "Daypack or crossbody bag",
+          "Reusable water bottle",
+          "Snacks for transit"
+        ]
+      }
+    ]
+  },
+  "budgetPlan": {
+    "totalBudget": "$1244",
+    "days": 3,
+    "dailyAverage": "$415",
+    "emergencyBuffer": "$124",
+    "summary": "Plan around $415 per day, including a built-in $124 trip buffer for emergencies, weather changes, or outfit-related purchases.",
+    "dayPlans": [
+      {
+        "day": 1,
+        "title": "Day 1",
+        "dailyLimit": "$415",
+        "categories": {
+          "food": "$134",
+          "transport": "$58",
+          "activities": "$113",
+          "shopping": "$73",
+          "buffer": "$36"
+        },
+        "places": [
+          {
+            "place": "{\"days\":[{\"day\":1",
+            "guidance": "Aim for $27 or less here; count it under activities."
+          },
+          {
+            "place": "\"title\":\"Arrival",
+            "guidance": "Aim for $27 or less here; count it under activities."
+          },
+          {
+            "place": "Chinatown Discovery\"",
+            "guidance": "Aim for $27 or less here; count it under activities."
+          },
+          {
+            "place": "Low 26°C. Seasonal estimate for late June.\"",
+            "guidance": "Aim for $27 or less here; count it under activities."
+          }
+        ],
+        "tip": "Book fixed-price activities first, then use the remaining food and shopping caps as flexible spend."
+      },
+      {
+        "day": 2,
+        "title": "Day 2",
+        "dailyLimit": "$415",
+        "categories": {
+          "food": "$133",
+          "transport": "$66",
+          "activities": "$108",
+          "shopping": "$66",
+          "buffer": "$41"
+        },
+        "places": [
+          {
+            "place": "Main activity block",
+            "guidance": "Keep entry tickets, snacks, and local transport under $108."
+          }
+        ],
+        "tip": "Use this as a daily envelope and move unused money into the next day."
+      },
+      {
+        "day": 3,
+        "title": "Day 3",
+        "dailyLimit": "$415",
+        "categories": {
+          "food": "$133",
+          "transport": "$66",
+          "activities": "$108",
+          "shopping": "$66",
+          "buffer": "$41"
+        },
+        "places": [
+          {
+            "place": "Main activity block",
+            "guidance": "Keep entry tickets, snacks, and local transport under $108."
+          }
+        ],
+        "tip": "Use this as a daily envelope and move unused money into the next day."
+      }
+    ]
+  }
+}

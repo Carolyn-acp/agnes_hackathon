@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<section class="section-header">
+  <div>
+    <p class="eyebrow">Travel Assistant</p>
+    <h1><%= title %></h1>
+  </div>
+</section>
+
+<% if (error) { %>
+  <p class="alert"><%= error %></p>
+<% } %>
+
+<section class="tool-panel">
+  <form action="/packing-list" method="POST">
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" value="<%= location %>" placeholder="e.g. Tokyo, Japan" required>
+
+    <label for="weather">Weather Conditions</label>
+    <input type="text" id="weather" name="weather" value="<%= weather %>" placeholder="e.g. Rainy and cold" required>
+
+    <label for="activities">Planned Activities</label>
+    <textarea id="activities" name="activities" rows="4" placeholder="e.g. Hiking, fancy dinner, swimming" required><%= activities %></textarea>
+
+    <button type="submit">Generate List</button>
+  </form>
+</section>
+
+<% if (packingList && packingList.categories) { %>
+  <section class="section-header">
+    <div>
+      <p class="eyebrow">Generated</p>
+      <h2>Required Items to Bring</h2>
+    </div>
+  </section>
+
+  <section class="day-grid">
+    <% packingList.categories.forEach(category => { %>
+      <article class="day-card">
+        <h3><%= category.name %></h3>
+        <ul>
+          <% category.items.forEach(item => { %>
+            <li><%= item %></li>
+          <% }) %>
+        </ul>
+      </article>
+    <% }) %>
+  </section>
+<% } %>
+
+<%- include('partials/footer') %>

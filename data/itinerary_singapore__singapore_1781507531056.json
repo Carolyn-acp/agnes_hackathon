@@ -1,0 +1,139 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-16 to 2026-06-19",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Arrival and Jewel Changi Experience",
+        "weather": "Partly cloudy, 28°C (Seasonal estimate for mid-June)",
+        "activities": [
+          "Arrive at Changi Airport and explore Jewel Changi",
+          "Visit the HSBC Rain Vortex and Shiseido Forest Valley",
+          "Dinner at Jewel food court or restaurant"
+        ],
+        "attractions": [
+          {
+            "name": "Jewel Changi Airport",
+            "source": "user-selected"
+          }
+        ],
+        "budgetNote": "Start with arrival logistics; Jewel has free entry but some activities may cost extra."
+      },
+      {
+        "day": 2,
+        "title": "Cultural Chinatown Exploration",
+        "weather": "Hot and humid, 30°C, chance of afternoon showers (Seasonal estimate)",
+        "activities": [
+          "Morning walk through Chinatown Heritage Centre",
+          "Visit Buddha Tooth Relic Temple and pagoda",
+          "Explore street art and shops at Pagoda Street"
+        ],
+        "attractions": [
+          {
+            "name": "Chinatown",
+            "source": "user-selected"
+          },
+          {
+            "name": "Buddha Tooth Relic Temple",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Most attractions in Chinatown are low-cost or free; budget for meals and souvenirs."
+      },
+      {
+        "day": 3,
+        "title": "Northern Frontier and Local Life",
+        "weather": "Thunderstorms likely in late afternoon, 29°C (Seasonal estimate)",
+        "activities": [
+          "Travel to Woodlands Checkpoint area",
+          "Visit Woodlands Town Park and Waterfall Garden",
+          "Explore local hawker centers in Woodlands for affordable dining"
+        ],
+        "attractions": [
+          {
+            "name": "Woodlands",
+            "source": "user-selected"
+          },
+          {
+            "name": "Woodlands Waterfall Garden",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Budget-friendly day focusing on public parks and local food; transport costs apply."
+      },
+      {
+        "day": 4,
+        "title": "Final Highlights and Departure Prep",
+        "weather": "Clear skies, 31°C (Seasonal estimate)",
+        "activities": [
+          "Visit Marina Bay Sands SkyPark (if budget allows) or walk around Gardens by the Bay",
+          "Shopping at Orchard Road or last-minute souvenirs",
+          "Departure to airport"
+        ],
+        "attractions": [
+          {
+            "name": "Gardens by the Bay",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Remaining budget allocated for final shopping and potential paid attractions like Supertree Grove OCBC Skyway."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable shirts (cotton or linen)",
+          "Shorts or lightweight trousers",
+          "Comfortable walking shoes/sneakers",
+          "Sandals or flip-flops",
+          "Light rain jacket or compact umbrella",
+          "Undergarments for 4 days",
+          "Sleepwear"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Universal power adapter",
+          "Phone charger",
+          "Portable power bank",
+          "Headphones"
+        ]
+      },
+      {
+        "name": "Toiletries & Health",
+        "items": [
+          "High SPF sunscreen",
+          "Insect repellent",
+          "Personal toiletries (toothbrush, toothpaste, etc.)",
+          "Hand sanitizer",
+          "Basic first aid kit (plasters, pain relievers)",
+          "Face mask (optional, for crowded areas or dust)"
+        ]
+      },
+      {
+        "name": "Documents & Money",
+        "items": [
+          "Passport (valid for at least 6 months)",
+          "Visa/entry permits (if applicable)",
+          "Flight tickets and hotel confirmations",
+          "Credit/debit cards",
+          "Small amount of local currency (SGD) for hawker centers"
+        ]
+      },
+      {
+        "name": "Miscellaneous",
+        "items": [
+          "Reusable water bottle",
+          "Small daypack for daily excursions",
+          "Sunglasses",
+          "Hat or cap for sun protection"
+        ]
+      }
+    ]
+  }
+}
