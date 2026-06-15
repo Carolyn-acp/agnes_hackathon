@@ -1,7 +1,4 @@
 const agnesService = require('../services/agnesService');
-const budgetService = require('../services/budgetService');
-
-const trim = (value) => (value || '').toString().trim();
 
 const normalizeTripPlanForView = (tripPlan) => {
   if (Array.isArray(tripPlan?.days)) {
@@ -9,6 +6,19 @@ const normalizeTripPlanForView = (tripPlan) => {
   }
 
   return null;
+};
+
+const calculateDays = (startDate, endDate) => {
+  const start = new Date(`${startDate}T00:00:00`);
+  const end = new Date(`${endDate}T00:00:00`);
+
+  if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime()) || end < start) {
+    return '';
+  }
+
+  const millisecondsPerDay = 24 * 60 * 60 * 1000;
+
+  return String(Math.round((end - start) / millisecondsPerDay) + 1);
 };
 
 const renderAgnes = (res, options = {}) => {
@@ -20,9 +30,10 @@ const renderAgnes = (res, options = {}) => {
     budget: '',
     days: '',
     places: '',
+    startDate: '',
+    endDate: '',
     travelDates: '',
     tripPlan: null,
-    budgetPlan: null,
     textPrompt: '',
     imagePrompt: '',
     textResult: '',
@@ -38,22 +49,17 @@ exports.showAgnes = (req, res) => {
 };
 
 exports.generateTrip = async (req, res) => {
-  const country = trim(req.body.country);
-  const city = trim(req.body.city);
-  const destination = [city, country].filter(Boolean).join(', ') || trim(req.body.destination);
-  const budget = trim(req.body.budget);
-  const travelDates = trim(req.body.travelDates);
-  const weatherNotes = trim(req.body.weatherNotes);
-  const wardrobe = trim(req.body.wardrobe);
   const country = req.body.country && req.body.country.trim();
   const city = req.body.city && req.body.city.trim();
   const destination = [city, country].filter(Boolean).join(', ') || (req.body.destination && req.body.destination.trim());
   const budget = req.body.budget && req.body.budget.trim();
-  const days = req.body.days && req.body.days.trim();
   const places = req.body.places && req.body.places.trim();
-  const travelDates = req.body.travelDates && req.body.travelDates.trim();
+  const startDate = req.body.startDate && req.body.startDate.trim();
+  const endDate = req.body.endDate && req.body.endDate.trim();
+  const days = startDate && endDate ? calculateDays(startDate, endDate) : '';
+  const travelDates = startDate && endDate ? `${startDate} to ${endDate}` : '';
 
-  if (!destination || !budget || !days) {
+  if (!destination || !budget || !days || !startDate || !endDate) {
     renderAgnes(res, {
       country,
       city,
@@ -61,8 +67,10 @@ exports.generateTrip = async (req, res) => {
       budget,
       days,
       places,
+      startDate,
+      endDate,
       travelDates,
-      error: 'Enter a country, city, budget, and number of days.'
+      error: 'Enter a country, city, budget, start date, and end date.'
     });
     return;
   }
@@ -75,11 +83,6 @@ exports.generateTrip = async (req, res) => {
       places,
       travelDates,
     });
-    const budgetPlan = budgetService.createBudgetPlan({
-      budget,
-      travelDates,
-      itinerary: tripPlan.itinerary
-    });
 
     renderAgnes(res, {
       country,
@@ -88,13 +91,9 @@ exports.generateTrip = async (req, res) => {
       budget,
       days,
       places,
+      startDate,
+      endDate,
       travelDates,
-      weatherNotes,
-      wardrobe,
-      tripPlan,
-      budgetPlan,
-      imageResult,
-      visualError
       tripPlan
     });
   } catch (error) {
@@ -105,6 +104,8 @@ exports.generateTrip = async (req, res) => {
       budget,
       days,
       places,
+      startDate,
+      endDate,
       travelDates,
       error: error.message
     });
@@ -112,7 +113,7 @@ exports.generateTrip = async (req, res) => {
 };
 
 exports.generateText = async (req, res) => {
-  const textPrompt = trim(req.body.prompt);
+  const textPrompt = req.body.prompt && req.body.prompt.trim();
 
   if (!textPrompt) {
     renderAgnes(res, {
@@ -137,7 +138,7 @@ exports.generateText = async (req, res) => {
 };
 
 exports.generateImage = async (req, res) => {
-  const imagePrompt = trim(req.body.prompt);
+  const imagePrompt = req.body.prompt && req.body.prompt.trim();
 
   if (!imagePrompt) {
     renderAgnes(res, {
