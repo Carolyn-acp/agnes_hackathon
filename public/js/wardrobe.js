@@ -261,9 +261,9 @@ const processImage = async (file) => {
       name = analysis.name || name;
       styleTags = Array.isArray(analysis.style_tags) ? analysis.style_tags : [];
       quality = analysis.quality || quality;
-      analysisNote = 'Analysed by Agnes AI.';
+      analysisNote = 'Analysed by Wonder Wardrobe AI.';
     } catch (error) {
-      analysisNote = `Agnes analysis unavailable. ${analysisNote}`;
+      analysisNote = `AI analysis unavailable. ${analysisNote}`;
     }
   }
 
@@ -457,16 +457,6 @@ const setGenerating = (isGenerating, message = '') => {
 
 const getWardrobeItemById = (id) => wardrobeState.items.find((item) => item.id === id);
 
-const getImageSource = (imageResult) => {
-  if (!imageResult) {
-    return '';
-  }
-
-  return imageResult.startsWith('http') || imageResult.startsWith('data:')
-    ? imageResult
-    : `data:image/png;base64,${imageResult}`;
-};
-
 const renderOutfitStackItem = (item) => {
   if (!item) {
     return '';
@@ -556,8 +546,7 @@ const renderOutfits = (outfits, { append = false } = {}) => {
     const selectedItems = arrangeWearableOrder(selectedIds.map(getWardrobeItemById).filter(Boolean));
     const groupedItems = groupOutfitItems(selectedItems);
     const additionalItems = Array.isArray(outfit.additionalItems) ? outfit.additionalItems : [];
-    const wornItemText = selectedItems.map((item) => item.name).join(', ') || 'Wardrobe items selected by Agnes';
-    const imageSource = getImageSource(outfit.imageResult);
+    const wornItemText = selectedItems.map((item) => item.name).join(', ') || 'Wardrobe items selected by Wonder Wardrobe';
     const additionsMarkup = additionalItems.length
       ? `
         <div class="suggested-additions">
@@ -578,7 +567,6 @@ const renderOutfits = (outfits, { append = false } = {}) => {
       <article class="outfit-card visual-outfit-card">
         <p class="eyebrow">Day ${escapeHtml(outfit.day)}</p>
         <h3>${escapeHtml(outfit.title)}</h3>
-        ${imageSource ? `<img class="outfit-illustration" src="${escapeHtml(imageSource)}" alt="${escapeHtml(outfit.title)} Agnes flat lay fashion illustration">` : ''}
         <div class="outfit-stack" aria-label="${escapeHtml(outfit.title)} top to bottom outfit arrangement">
           ${renderOutfitRow('Finish', groupedItems.finish)}
           ${renderOutfitRow('Top', groupedItems.top)}
@@ -613,13 +601,13 @@ const requestOutfits = async ({ days, append = false } = {}) => {
   }
 
   const requestedDays = days || getDayCount();
-  setGenerating(true, `Asking Agnes to choose ${requestedDays} wardrobe-based ${requestedDays === 1 ? 'outfit' : 'outfits'}...`);
+  setGenerating(true, `Choosing ${requestedDays} wardrobe-based ${requestedDays === 1 ? 'outfit' : 'outfits'}...`);
 
   if (!append) {
     selectors.results.innerHTML = `
       <article class="empty-state compact">
         <h3>Generating outfits</h3>
-        <p>Agnes is choosing uploaded wardrobe items only. The outfit image will be arranged from top to bottom.</p>
+        <p>Wonder Wardrobe is choosing uploaded wardrobe items only. The preview will use your actual uploaded images.</p>
       </article>
     `;
   }
@@ -650,7 +638,7 @@ const requestOutfits = async ({ days, append = false } = {}) => {
     setGenerating(false, '');
     selectors.results.innerHTML = `
       <article class="empty-state compact">
-        <h3>Could not generate images</h3>
+        <h3>Could not generate outfits</h3>
         <p>${escapeHtml(error.message)}</p>
       </article>
     `;
