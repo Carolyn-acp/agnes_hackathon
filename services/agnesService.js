@@ -166,7 +166,9 @@ exports.generateVisionText = async ({ prompt, imageDataUrl }) => {
   return data.choices?.[0]?.message?.content || '';
 };
 
-exports.generateTripPlan = async ({ destination, budget, travelDates, weatherNotes, wardrobe }) => {
+exports.generateTripPlan = async ({ destination, budget, days, places, travelDates, weatherNotes, wardrobe }) => {
+  const parsedDays = Number(days) || 1;
+
   const prompt = `
 You are a multi-agent travel stylist. Build a practical trip plan from the user inputs.
 
@@ -279,4 +281,3 @@ exports.generateImage = async (prompt) => {
 
   return firstImage.url || firstImage.image_url || firstImage.b64_json || data.url || '';
 };
-

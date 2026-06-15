@@ -128,5 +128,148 @@
         }
       ]
     }
+  },
+  {
+    "id": "3618ba69-b74f-4c7d-ac84-0cc644895820",
+    "createdAt": "2026-06-15T07:44:22.834Z",
+    "input": {
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "destination": "Hong Kong, Hong Kong",
+      "budget": "2400",
+      "days": "6",
+      "places": [
+        "tram"
+      ],
+      "startDate": "2026-06-27",
+      "endDate": "2026-07-02",
+      "travelDates": "2026-06-27 to 2026-07-02"
+    },
+    "tripPlan": {
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival and Victoria Harbour Lights",
+          "weather": "Hot and humid, ~30°C, chance of afternoon thunderstorms.",
+          "activities": [
+            "Check into hotel in Tsim Sha Tsui or Mong Kok.",
+            "Walk along Tsim Sha Tsui Promenade for sunset views.",
+            "Watch the Symphony of Lights show."
+          ],
+          "attractions": [
+            {
+              "name": "Tsim Sha Tsui Promenade",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Star Ferry Pier",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Low cost: Accommodation deposit and ferry ride (HK$2.6)."
+        },
+        {
+          "day": 2,
+          "title": "Central Heritage and Peak Views",
+          "weather": "Partly cloudy, ~29°C.",
+          "activities": [
+            "Explore Central district heritage buildings.",
+            "Take the Peak Tram to Victoria Peak.",
+            "Dinner at a local dim sum restaurant."
+          ],
+          "attractions": [
+            {
+              "name": "Garden Road and Pedder Street",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "The Peak Tower",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Moderate: Peak Tram round-trip (~HK$128) and lunch."
+        },
+        {
+          "day": 3,
+          "title": "Kowloon Culture and Street Food",
+          "weather": "Rainy, ~28°C.",
+          "activities": [
+            "Visit Hong Kong Museum of History.",
+            "Wander through Mong Kok's Ladies Market.",
+            "Try street food in Yau Ma Tei."
+          ],
+          "attractions": [
+            {
+              "name": "Hong Kong Museum of History",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Ladies Market",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Low cost: Free museum entry and affordable street snacks."
+        },
+        {
+          "day": 4,
+          "title": "Island Hopping and Nature",
+          "weather": "Sunny, ~31°C.",
+          "activities": [
+            "Take a ferry to Lantau Island.",
+            "Visit Po Lin Monastery and Big Buddha.",
+            "Explore Tai O fishing village."
+          ],
+          "attractions": [
+            {
+              "name": "Ngong Ping 360 Cable Car",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Tai O",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "High cost: Ngong Ping 360 ticket (~HK$390). Budget conscious alternative: Take public bus instead of cable car."
+        },
+        {
+          "day": 5,
+          "title": "Shopping and Modern HK",
+          "weather": "Hot, ~32°C.",
+          "activities": [
+            "Shop in Causeway Bay.",
+            "Visit K11 MUSEA for art and design.",
+            "Evening cruise or waterfront dining."
+          ],
+          "attractions": [
+            {
+              "name": "Causeway Bay Shopping District",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "K11 MUSEA",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Variable: Depends on shopping choices. Free entry to malls and museums."
+        },
+        {
+          "day": 6,
+          "title": "Departure and Last Souvenirs",
+          "weather": "Cloudy, ~30°C.",
+          "activities": [
+            "Final breakfast at local cafe.",
+            "Buy souvenirs at Union Square or airport duty-free.",
+            "Head to airport for departure."
+          ],
+          "attractions": [
+            {
+              "name": "Union Square",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Low cost: Last meal and transit."
+        }
+      ]
+    }
   }
 ]

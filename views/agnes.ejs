@@ -155,45 +155,46 @@
     <% }) %>
   </section>
 
-  <section class="tool-panel budget-handoff">
-    <div>
-      <p class="eyebrow">Budget segment</p>
-      <h2>Turn this itinerary into a spending plan</h2>
-      <p>Send the generated itinerary and your trip budget to the dedicated budget planner.</p>
-    </div>
-
-      <div class="budget-day-grid">
-        <% budgetPlan.dayPlans.forEach((dayPlan) => { %>
-          <article class="budget-day">
-            <div class="budget-day-header">
-              <div>
-                <p class="eyebrow"><%= dayPlan.title %></p>
-                <h3><%= dayPlan.dailyLimit %> max</h3>
-              </div>
-            </div>
-
-            <div class="category-grid">
-              <div><span>Food</span><strong><%= dayPlan.categories.food %></strong></div>
-              <div><span>Transport</span><strong><%= dayPlan.categories.transport %></strong></div>
-              <div><span>Activities</span><strong><%= dayPlan.categories.activities %></strong></div>
-              <div><span>Shopping</span><strong><%= dayPlan.categories.shopping %></strong></div>
-              <div><span>Buffer</span><strong><%= dayPlan.categories.buffer %></strong></div>
-            </div>
-
-            <ul class="place-guidance">
-              <% dayPlan.places.forEach((place) => { %>
-                <li>
-                  <strong><%= place.place %></strong>
-                  <span><%= place.guidance %></span>
-                </li>
-              <% }) %>
-            </ul>
-
-            <p class="budget-tip"><%= dayPlan.tip %></p>
-          </article>
-        <% }) %>
+  <% if (budgetPlan) { %>
+    <section class="tool-panel budget-handoff">
+      <div>
+        <p class="eyebrow">Budget segment</p>
+        <h2>Turn this itinerary into a spending plan</h2>
+        <p>Send the generated itinerary and your trip budget to the dedicated budget planner.</p>
       </div>
-    </section>
+
+        <div class="budget-day-grid">
+          <% budgetPlan.dayPlans.forEach((dayPlan) => { %>
+            <article class="budget-day">
+              <div class="budget-day-header">
+                <div>
+                  <p class="eyebrow"><%= dayPlan.title %></p>
+                  <h3><%= dayPlan.dailyLimit %> max</h3>
+                </div>
+              </div>
+
+              <div class="category-grid">
+                <div><span>Food</span><strong><%= dayPlan.categories.food %></strong></div>
+                <div><span>Transport</span><strong><%= dayPlan.categories.transport %></strong></div>
+                <div><span>Activities</span><strong><%= dayPlan.categories.activities %></strong></div>
+                <div><span>Shopping</span><strong><%= dayPlan.categories.shopping %></strong></div>
+                <div><span>Buffer</span><strong><%= dayPlan.categories.buffer %></strong></div>
+              </div>
+
+              <ul class="place-guidance">
+                <% dayPlan.places.forEach((place) => { %>
+                  <li>
+                    <strong><%= place.place %></strong>
+                    <span><%= place.guidance %></span>
+                  </li>
+                <% }) %>
+              </ul>
+
+              <p class="budget-tip"><%= dayPlan.tip %></p>
+            </article>
+          <% }) %>
+        </div>
+      </section>
   <% } %>
 <% } %>
 
