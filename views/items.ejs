@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+<section class="section-header">
+  <div>
+    <p class="eyebrow">Model data</p>
+    <h1>Items</h1>
+  </div>
+</section>
+
+<form class="item-form" action="/items" method="post">
+  <label for="name">New item</label>
+  <div class="form-row">
+    <input id="name" name="name" type="text" placeholder="Enter item name" required>
+    <button type="submit">Add</button>
+  </div>
+</form>
+
+<ul class="item-list">
+  <% items.forEach((item) => { %>
+    <li>
+      <span>#<%= item.id %></span>
+      <strong><%= item.name %></strong>
+    </li>
+  <% }) %>
+</ul>
+
+<%- include('partials/footer') %>
