@@ -194,6 +194,28 @@
   <% } %>
 <% } %>
 
+<% if (packingList && packingList.categories) { %>
+  <section class="section-header">
+    <div>
+      <p class="eyebrow">Generated</p>
+      <h2>Recommended Packing List</h2>
+    </div>
+  </section>
+
+  <section class="day-grid">
+    <% packingList.categories.forEach(category => { %>
+      <article class="day-card">
+        <h3><%= category.name %></h3>
+        <ul>
+          <% category.items.forEach(item => { %>
+            <li><%= item %></li>
+          <% }) %>
+        </ul>
+      </article>
+    <% }) %>
+  </section>
+<% } %>
+
 <script src="/js/locationPicker.js"></script>
 
 <%- include('partials/footer') %>

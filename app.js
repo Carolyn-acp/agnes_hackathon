@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const pageRoutes = require('./routes/pageRoutes');
+const packingListRoutes = require('./routes/packingListRoutes');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', pageRoutes);
+app.use('/packing-list', packingListRoutes);
 
 app.use((req, res) => {
   res.status(404).render('404', {
