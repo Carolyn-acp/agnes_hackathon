@@ -1,0 +1,137 @@
+{
+  "destination": "Singapore, Singapore",
+  "travelDates": "2026-06-18 to 2026-06-20",
+  "tripPlan": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Sentosa Island Adventure",
+        "weather": "Partly cloudy with a chance of afternoon thunderstorms. High 31°C, Low 26°C. Seasonal estimate for June.",
+        "activities": [
+          "Explore Universal Studios Singapore and beach clubs in Sentosa",
+          "Visit Siloso Beach for lunch and relaxation",
+          "Take the cable car back to mainland Singapore"
+        ],
+        "attractions": [
+          {
+            "name": "Sentosa",
+            "source": "user-selected"
+          },
+          {
+            "name": "S.E.A. Aquarium",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Sentosa attractions can be pricey; consider buying a combo pass. Budget allows for moderate dining."
+      },
+      {
+        "day": 2,
+        "title": "Nature and City Highlights",
+        "weather": "Hot and humid with intermittent rain showers. High 32°C, Low 25°C. Seasonal estimate for June.",
+        "activities": [
+          "Morning visit to River Wonders and Bird Paradise",
+          "Lunch at Mandai Wildlife Reserve area or nearby",
+          "Afternoon trip to Jewel Changi Airport for shopping and the Rain Vortex"
+        ],
+        "attractions": [
+          {
+            "name": "Bird Park",
+            "source": "user-selected"
+          },
+          {
+            "name": "Jewel",
+            "source": "user-selected"
+          },
+          {
+            "name": "Singapore Zoo",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "Wildlife parks require significant budget allocation. Jewel entry is free, but activities inside vary."
+      },
+      {
+        "day": 3,
+        "title": "Urban Culture and Business District",
+        "weather": "Clear skies with occasional clouds. High 31°C, Low 26°C. Seasonal estimate for June.",
+        "activities": [
+          "Tour SMU campus and nearby Clarke Quay",
+          "Explore Marina Bay Sands and Gardens by the Bay",
+          "Dinner with a view of the Supertree Grove light show"
+        ],
+        "attractions": [
+          {
+            "name": "SMU",
+            "source": "user-selected"
+          },
+          {
+            "name": "Marina Bay Sands",
+            "source": "AI-recommended"
+          },
+          {
+            "name": "Gardens by the Bay",
+            "source": "AI-recommended"
+          }
+        ],
+        "budgetNote": "SMU campus access is generally free. Focus budget on Marina Bay dining and optional Cloud Forest/Flower Dome tickets."
+      }
+    ]
+  },
+  "packingList": {
+    "categories": [
+      {
+        "name": "Clothing",
+        "items": [
+          "Lightweight, breathable t-shirts (3-4)",
+          "Quick-dry shorts or lightweight trousers (3 pairs)",
+          "Comfortable walking sandals",
+          "Waterproof sneakers or trail shoes for hiking/wet conditions",
+          "Swimwear",
+          "Lightweight rain jacket or poncho",
+          "Sun hat or cap",
+          "Sunglasses",
+          "Light layer (cardigan or long-sleeve shirt) for air-conditioned malls and MRT"
+        ]
+      },
+      {
+        "name": "Electronics",
+        "items": [
+          "Universal power adapter (Type G)",
+          "Portable power bank",
+          "Waterproof phone case or dry bag",
+          "Camera (optional)",
+          "Headphones"
+        ]
+      },
+      {
+        "name": "Toiletries & Health",
+        "items": [
+          "High SPF sunscreen",
+          "Insect repellent",
+          "Personal medications",
+          "Hand sanitizer",
+          "Face mask (for crowded indoor areas like aquariums)",
+          "Small towel or microfiber cloth"
+        ]
+      },
+      {
+        "name": "Documents & Money",
+        "items": [
+          "Passport and visa (if required)",
+          "Digital and physical copies of booking confirmations",
+          "Credit/debit cards",
+          "Some Singapore Dollars cash for small vendors"
+        ]
+      },
+      {
+        "name": "Accessories & Misc",
+        "items": [
+          "Reusable water bottle",
+          "Compact umbrella",
+          "Daypack or small backpack",
+          "Plastic bags for wet clothes/swimwear",
+          "Snacks for transit"
+        ]
+      }
+    ]
+  }
+}
