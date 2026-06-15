@@ -127,6 +127,23 @@
       </article>
     <% }) %>
   </section>
+
+  <section class="tool-panel budget-handoff">
+    <div>
+      <p class="eyebrow">Budget segment</p>
+      <h2>Turn this itinerary into a spending plan</h2>
+      <p>Send the generated itinerary and your trip budget to the dedicated budget planner.</p>
+    </div>
+
+    <form action="/budget/plan" method="post">
+      <input type="hidden" name="destination" value="<%= destination %>">
+      <input type="hidden" name="budget" value="<%= budget %>">
+      <input type="hidden" name="travelDates" value="<%= travelDates %>">
+      <input type="hidden" name="days" value="<%= days %>">
+      <textarea name="itineraryJson" hidden><%= JSON.stringify(dayCards) %></textarea>
+      <button type="submit">Open budget planner</button>
+    </form>
+  </section>
 <% } %>
 
 <script src="/js/locationPicker.js"></script>
