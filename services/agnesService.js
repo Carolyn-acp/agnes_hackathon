@@ -175,12 +175,41 @@ exports.generateText = async (prompt) => {
   return data.choices?.[0]?.message?.content || '';
 };
 
-exports.generateTripPlan = async ({ destination, budget, travelDates, places, days }) => {
-  const parsedDays = Number.parseInt(days, 10) || 1;
-  const prompt = `Create a ${parsedDays}-day itinerary for ${destination}.
-Budget: ${budget}
-Dates: ${travelDates || 'Not provided'}
-User-selected places, high priority: ${places || 'Not provided'}
+exports.generateVisionText = async ({ prompt, imageDataUrl }) => {
+  const data = await postToAgnes('/chat/completions', {
+    model: process.env.AGNES_VISION_MODEL || process.env.AGNES_TEXT_MODEL || 'agnes-2.0-flash',
+    messages: [
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'text',
+            text: prompt
+          },
+          {
+            type: 'image_url',
+            image_url: {
+              url: imageDataUrl
+            }
+          }
+        ]
+      }
+    ]
+  });
+
+  return data.choices?.[0]?.message?.content || '';
+};
+
+exports.generateTripPlan = async ({ destination, budget, travelDates, weatherNotes, wardrobe }) => {
+  const prompt = `
+You are a multi-agent travel stylist. Build a practical trip plan from the user inputs.
+
+User inputs:
+- Destination: ${destination}
+- Budget: ${budget}
+- Travel dates: ${travelDates || 'Not provided'}
+- Weather notes from user: ${weatherNotes || 'Not provided'}
+- Wardrobe owned by user: ${wardrobe || 'Not provided'}
 
 Return ONLY JSON. Rules: exactly ${parsedDays} days; include all user-selected places; add nearby AI-recommended attractions if needed; label every attraction source as "user-selected" or "AI-recommended"; include weather estimate per day based on destination and dates.
 
@@ -223,3 +252,4 @@ exports.generateImage = async (prompt) => {
 
   return firstImage.url || firstImage.image_url || firstImage.b64_json || data.url || '';
 };
+

@@ -3,3 +3,9 @@ exports.showHome = (req, res) => {
     title: 'Agnes Hackathon'
   });
 };
+
+exports.showWardrobe = (req, res) => {
+  res.render('wardrobe', {
+    title: 'Wardrobe'
+  });
+};
