@@ -1,5 +1,4 @@
 const agnesService = require('../services/agnesService');
-const budgetService = require('../services/budgetService');
 const fs = require('fs');
 const path = require('path');
 const itineraryModel = require('../models/itineraryModel');
@@ -39,7 +38,6 @@ const renderAgnes = (res, options = {}) => {
     travelDates: '',
     tripPlan: null,
     packingList: null,
-    budgetPlan: null,
     textPrompt: '',
     imagePrompt: '',
     textResult: '',
@@ -99,12 +97,6 @@ exports.generateTrip = async (req, res) => {
       tripPlan
     });
 
-    const budgetPlan = budgetService.createBudgetPlan({
-      budget,
-      travelDates,
-      itinerary: JSON.stringify(tripPlan)
-    });
-
     // Create a data directory if it doesn't exist
     const dataDir = path.join(__dirname, '../data');
     if (!fs.existsSync(dataDir)) {
@@ -120,8 +112,7 @@ exports.generateTrip = async (req, res) => {
       destination,
       travelDates,
       tripPlan,
-      packingList,
-      budgetPlan
+      packingList
     };
     fs.writeFileSync(filePath, JSON.stringify(itineraryData, null, 2));
     const savedItinerary = itineraryModel.create({
@@ -151,7 +142,6 @@ exports.generateTrip = async (req, res) => {
       travelDates,
       tripPlan,
       packingList,
-      budgetPlan,
       savedItinerary
     });
   } catch (error) {
