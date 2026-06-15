@@ -1,0 +1,117 @@
+<%- include('partials/header') %>
+
+<section class="section-header">
+  <div>
+    <p class="eyebrow">Budget planner</p>
+    <h1>Plan spending around the itinerary</h1>
+    <p>Split the trip budget into daily caps, category limits, and place-by-place guidance.</p>
+  </div>
+</section>
+
+<% if (error) { %>
+  <p class="alert"><%= error %></p>
+<% } %>
+
+<section class="tool-panel trip-builder">
+  <h2>Budget inputs</h2>
+  <form action="/budget/plan" method="post">
+    <div class="form-grid">
+      <label>
+        Destination
+        <input name="destination" type="text" placeholder="Tokyo, Japan" value="<%= destination %>">
+      </label>
+
+      <label>
+        Budget
+        <input name="budget" type="text" placeholder="$1200" value="<%= budget %>" required>
+      </label>
+
+      <label>
+        Travel dates
+        <input name="travelDates" type="text" placeholder="2026-07-03 to 2026-07-07" value="<%= travelDates %>">
+      </label>
+
+      <label>
+        Days
+        <input name="days" type="number" min="1" max="30" placeholder="5" value="<%= days %>">
+      </label>
+    </div>
+
+    <label>
+      Trip itinerary
+      <textarea name="itineraryText" rows="8" placeholder="Day 1: Shibuya Crossing, ramen lunch, shopping at Shibuya 109&#10;Day 2: Senso-ji, Ueno Park, cafe lunch"><%= itineraryText %></textarea>
+    </label>
+
+    <button type="submit">Create budget plan</button>
+  </form>
+</section>
+
+<% if (budgetPlan) { %>
+  <section class="agent-card budget-card budget-summary-card">
+    <p class="eyebrow"><%= destination || 'Trip' %></p>
+    <h2>Budget summary</h2>
+    <div class="budget-metrics">
+      <div>
+        <span>Total</span>
+        <strong><%= budgetPlan.totalBudget %></strong>
+      </div>
+      <div>
+        <span>Days</span>
+        <strong><%= budgetPlan.days %></strong>
+      </div>
+      <div>
+        <span>Daily guide</span>
+        <strong><%= budgetPlan.dailyAverage %></strong>
+      </div>
+      <div>
+        <span>Trip buffer</span>
+        <strong><%= budgetPlan.emergencyBuffer %></strong>
+      </div>
+    </div>
+    <p><%= budgetPlan.summary %></p>
+  </section>
+
+  <section class="budget-planner">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Daily guidelines</p>
+        <h2>How much to spend each day</h2>
+        <p>Follow these category caps while moving through each itinerary day.</p>
+      </div>
+    </div>
+
+    <div class="budget-day-grid">
+      <% budgetPlan.dayPlans.forEach((dayPlan) => { %>
+        <article class="budget-day">
+          <div class="budget-day-header">
+            <div>
+              <p class="eyebrow"><%= dayPlan.title %></p>
+              <h3><%= dayPlan.dailyLimit %> max</h3>
+            </div>
+          </div>
+
+          <div class="category-grid">
+            <div><span>Food</span><strong><%= dayPlan.categories.food %></strong></div>
+            <div><span>Transport</span><strong><%= dayPlan.categories.transport %></strong></div>
+            <div><span>Activities</span><strong><%= dayPlan.categories.activities %></strong></div>
+            <div><span>Shopping</span><strong><%= dayPlan.categories.shopping %></strong></div>
+            <div><span>Buffer</span><strong><%= dayPlan.categories.buffer %></strong></div>
+          </div>
+
+          <ul class="place-guidance">
+            <% dayPlan.places.forEach((place) => { %>
+              <li>
+                <strong><%= place.place %></strong>
+                <span><%= place.guidance %></span>
+              </li>
+            <% }) %>
+          </ul>
+
+          <p class="budget-tip"><%= dayPlan.tip %></p>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+<% } %>
+
+<%- include('partials/footer') %>
