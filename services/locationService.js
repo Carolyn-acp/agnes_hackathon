@@ -2,6 +2,12 @@ const restCountriesBase = () => process.env.RESTCOUNTRIES_API_BASE || 'https://a
 
 const getRestCountriesApiKey = () => process.env.RESTCOUNTRIES_API_KEY;
 
+const cityStateCountries = new Set([
+  'singapore',
+  'monaco',
+  'vatican city'
+]);
+
 const normalizeCountryName = (country) => {
   if (typeof country === 'string') {
     return country;
@@ -40,6 +46,22 @@ const normalizeCountries = (payload) => {
 exports.getCountries = async (query = '') => {
   const apiKey = getRestCountriesApiKey();
   const search = query.trim();
+
+  if (search.length === 1) {
+    const response = await fetch(
+      process.env.COUNTRIES_LIST_ENDPOINT || 'https://countriesnow.space/api/v0.1/countries/positions'
+    );
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok || data.error) {
+      throw new Error(data.msg || data.message || 'Countries API request failed');
+    }
+
+    return normalizeCountries(data).filter((country) =>
+      country.name.toLowerCase().startsWith(search.toLowerCase())
+    );
+  }
+
   const url = search
     ? `${restCountriesBase()}/countries/v5?q=${encodeURIComponent(search)}`
     : `${restCountriesBase()}/countries/v5`;
@@ -58,10 +80,20 @@ exports.getCountries = async (query = '') => {
     throw new Error(data.error?.message || data.message || 'Countries API request failed');
   }
 
-  return normalizeCountries(data);
+  const countries = normalizeCountries(data);
+
+  if (!search) {
+    return countries;
+  }
+
+  return countries.filter((country) => country.name.toLowerCase().startsWith(search.toLowerCase()));
 };
 
 exports.getCities = async (country) => {
+  if (cityStateCountries.has(country.trim().toLowerCase())) {
+    return [country.trim()];
+  }
+
   const response = await fetch(
     process.env.CITIES_API_ENDPOINT || 'https://countriesnow.space/api/v0.1/countries/cities',
     {

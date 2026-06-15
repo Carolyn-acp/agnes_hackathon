@@ -2,7 +2,114 @@ const apiBase = () => process.env.AGNES_API_BASE || 'https://apihub.agnes-ai.com
 
 const getApiKey = () => process.env.AGNES_API_KEY || process.env.AGNES_TOKEN;
 
-const postToAgnes = async (path, payload) => {
+const wait = (milliseconds) => new Promise((resolve) => {
+  setTimeout(resolve, milliseconds);
+});
+
+const isTransientAgnesError = (message) =>
+  /upstream error|timeout|temporarily|rate limit|request failed/i.test(message || '');
+
+const toList = (value) => {
+  if (Array.isArray(value)) {
+    return value.filter(Boolean);
+  }
+
+  if (!value) {
+    return [];
+  }
+
+  return [String(value)];
+};
+
+const splitPlaces = (places) =>
+  places ? places.split(/\r?\n|,/).map((place) => place.trim()).filter(Boolean) : [];
+
+const buildFallbackDays = ({ text, destination, budget, places, parsedDays, travelDates }) => {
+  const userPlaces = splitPlaces(places);
+
+  return Array.from({ length: parsedDays }, (_, index) => {
+    const place = userPlaces[index];
+    const activity = place
+      ? `Visit ${place}. Label: user-selected.`
+      : `Ask Agnes to recommend an additional nearby attraction in ${destination}. Label: AI-recommended.`;
+
+    return {
+      day: index + 1,
+      title: `Day ${index + 1} in ${destination}`,
+      weather: travelDates
+        ? `Weather estimate for ${travelDates}. Check a live forecast before leaving.`
+        : 'Weather estimate unavailable because exact dates were not provided.',
+      activities: index === 0 && text ? [text] : [activity],
+      attractions: place
+        ? [{ name: place, source: 'user-selected' }]
+        : [{ name: 'Nearby attraction recommendation needed', source: 'AI-recommended' }],
+      budgetNote: `Budget: ${budget}`
+    };
+  });
+};
+
+const findDayArray = (parsed) => {
+  if (Array.isArray(parsed?.days)) {
+    return parsed.days;
+  }
+
+  if (Array.isArray(parsed?.itinerary)) {
+    return parsed.itinerary;
+  }
+
+  if (Array.isArray(parsed?.dayByDay)) {
+    return parsed.dayByDay;
+  }
+
+  if (Array.isArray(parsed)) {
+    return parsed;
+  }
+
+  return [];
+};
+
+const normalizeAttractions = (day) => {
+  const attractions = toList(day.attractions || day.places || day.placesIncluded);
+
+  return attractions.map((attraction) => {
+    if (typeof attraction === 'object') {
+      return {
+        name: attraction.name || attraction.place || attraction.title || '',
+        source: attraction.source || attraction.type || attraction.label || 'AI-recommended'
+      };
+    }
+
+    return {
+      name: String(attraction),
+      source: 'user-selected'
+    };
+  }).filter((attraction) => attraction.name);
+};
+
+const normalizeTripPlan = ({ parsed, text, destination, budget, places, parsedDays, travelDates }) => {
+  const dayCards = findDayArray(parsed);
+
+  if (dayCards.length > 0) {
+    return {
+      days: dayCards.slice(0, parsedDays).map((day, index) => ({
+        day: day.day || index + 1,
+        title: day.title || `Day ${index + 1}`,
+        weather: day.weather || 'Weather estimate unavailable.',
+        activities: toList(day.activities || day.plan || day.schedule),
+        attractions: normalizeAttractions(day),
+        budgetNote: day.budgetNote || ''
+      }))
+    };
+  }
+
+  const fallbackText = parsed?.itinerary || parsed?.research || parsed?.plan || text;
+
+  return {
+    days: buildFallbackDays({ text: fallbackText, destination, budget, places, parsedDays, travelDates })
+  };
+};
+
+const postToAgnesOnce = async (path, payload) => {
   const apiKey = getApiKey();
 
   if (!apiKey) {
@@ -21,10 +128,37 @@ const postToAgnes = async (path, payload) => {
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    throw new Error(data.error?.message || data.message || 'Agnes API request failed');
+    const message = data.error?.message || data.message || 'Agnes API request failed';
+    const error = new Error(message);
+    error.status = response.status;
+    throw error;
   }
 
   return data;
+};
+
+const postToAgnes = async (path, payload) => {
+  let lastError;
+
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      return await postToAgnesOnce(path, payload);
+    } catch (error) {
+      lastError = error;
+
+      if (attempt === 3 || (!isTransientAgnesError(error.message) && error.status < 500)) {
+        break;
+      }
+
+      await wait(500 * attempt);
+    }
+  }
+
+  if (isTransientAgnesError(lastError?.message)) {
+    throw new Error('Agnes is temporarily having an upstream issue. Please try Generate again in a moment.');
+  }
+
+  throw lastError;
 };
 
 exports.generateText = async (prompt) => {
@@ -77,14 +211,20 @@ User inputs:
 - Weather notes from user: ${weatherNotes || 'Not provided'}
 - Wardrobe owned by user: ${wardrobe || 'Not provided'}
 
-Return ONLY valid JSON with this exact shape:
+Return ONLY JSON. Rules: exactly ${parsedDays} days; include all user-selected places; add nearby AI-recommended attractions if needed; label every attraction source as "user-selected" or "AI-recommended"; include weather estimate per day based on destination and dates.
+
+JSON shape:
 {
-  "itinerary": "Agent 1 Research Agent: concise day-by-day itinerary.",
-  "weather": "Agent 2 Weather Agent: visible weather expectations for each activity, including temperature, rain, humidity, and comfort advice. If exact live weather is unavailable, say it is an AI estimate and recommend checking a live forecast before leaving.",
-  "wardrobe": "Agent 3 Wardrobe Agent: what clothes from the user's wardrobe fit the destination and weather.",
-  "packing": "Agent 4 Packing Agent: packing checklist.",
-  "spending": "Agent 5 Spending Agent: budget optimization plan.",
-  "outfitPrompt": "Agent 6 Visual Agent: a detailed image-generation prompt for daily outfit previews."
+  "days": [
+    {
+      "day": 1,
+      "title": "Short title",
+      "weather": "Weather estimate",
+      "activities": ["Morning", "Afternoon", "Evening"],
+      "attractions": [{ "name": "Place", "source": "user-selected" }],
+      "budgetNote": "Short budget note"
+    }
+  ]
 }
 `;
 
@@ -92,15 +232,12 @@ Return ONLY valid JSON with this exact shape:
   const cleaned = text.replace(/```json|```/g, '').trim();
 
   try {
-    return JSON.parse(cleaned);
+    const parsed = JSON.parse(cleaned);
+
+    return normalizeTripPlan({ parsed, text, destination, budget, places, parsedDays, travelDates });
   } catch (error) {
     return {
-      itinerary: text,
-      weather: 'Weather was not returned in the expected format. Try again, or add clearer destination and date details.',
-      wardrobe: '',
-      packing: '',
-      spending: '',
-      outfitPrompt: `Travel outfit preview for ${destination}, suitable for ${weatherNotes || 'the expected weather'}.`
+      days: buildFallbackDays({ text, destination, budget, places, parsedDays, travelDates })
     };
   }
 };

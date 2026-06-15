@@ -1,4 +1,26 @@
 const agnesService = require('../services/agnesService');
+const itineraryModel = require('../models/itineraryModel');
+
+const normalizeTripPlanForView = (tripPlan) => {
+  if (Array.isArray(tripPlan?.days)) {
+    return tripPlan;
+  }
+
+  return null;
+};
+
+const calculateDays = (startDate, endDate) => {
+  const start = new Date(`${startDate}T00:00:00`);
+  const end = new Date(`${endDate}T00:00:00`);
+
+  if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime()) || end < start) {
+    return '';
+  }
+
+  const millisecondsPerDay = 24 * 60 * 60 * 1000;
+
+  return String(Math.round((end - start) / millisecondsPerDay) + 1);
+};
 
 const renderAgnes = (res, options = {}) => {
   res.render('agnes', {
@@ -7,17 +29,20 @@ const renderAgnes = (res, options = {}) => {
     city: '',
     destination: '',
     budget: '',
+    days: '',
+    places: '',
+    startDate: '',
+    endDate: '',
     travelDates: '',
-    weatherNotes: '',
-    wardrobe: '',
     tripPlan: null,
     textPrompt: '',
     imagePrompt: '',
     textResult: '',
     imageResult: '',
-    visualError: '',
+    savedItinerary: null,
     error: '',
-    ...options
+    ...options,
+    tripPlan: options.tripPlan ? normalizeTripPlanForView(options.tripPlan) : options.tripPlan || null
   });
 };
 
@@ -30,20 +55,24 @@ exports.generateTrip = async (req, res) => {
   const city = req.body.city && req.body.city.trim();
   const destination = [city, country].filter(Boolean).join(', ') || (req.body.destination && req.body.destination.trim());
   const budget = req.body.budget && req.body.budget.trim();
-  const travelDates = req.body.travelDates && req.body.travelDates.trim();
-  const weatherNotes = req.body.weatherNotes && req.body.weatherNotes.trim();
-  const wardrobe = req.body.wardrobe && req.body.wardrobe.trim();
+  const places = req.body.places && req.body.places.trim();
+  const startDate = req.body.startDate && req.body.startDate.trim();
+  const endDate = req.body.endDate && req.body.endDate.trim();
+  const days = startDate && endDate ? calculateDays(startDate, endDate) : '';
+  const travelDates = startDate && endDate ? `${startDate} to ${endDate}` : '';
 
-  if (!destination || !budget) {
+  if (!destination || !budget || !days || !startDate || !endDate) {
     renderAgnes(res, {
       country,
       city,
       destination,
       budget,
+      days,
+      places,
+      startDate,
+      endDate,
       travelDates,
-      weatherNotes,
-      wardrobe,
-      error: 'Enter at least a destination and budget.'
+      error: 'Enter a country, city, budget, start date, and end date.'
     });
     return;
   }
@@ -52,33 +81,37 @@ exports.generateTrip = async (req, res) => {
     const tripPlan = await agnesService.generateTripPlan({
       destination,
       budget,
+      days,
+      places,
       travelDates,
-      weatherNotes,
-      wardrobe
     });
-
-    let imageResult = '';
-    let visualError = '';
-
-    if (tripPlan.outfitPrompt) {
-      try {
-        imageResult = await agnesService.generateImage(tripPlan.outfitPrompt);
-      } catch (error) {
-        visualError = error.message;
-      }
-    }
+    const savedItinerary = itineraryModel.create({
+      input: {
+        country,
+        city,
+        destination,
+        budget,
+        days,
+        places: places ? places.split(/\r?\n|,/).map((place) => place.trim()).filter(Boolean) : [],
+        startDate,
+        endDate,
+        travelDates
+      },
+      tripPlan
+    });
 
     renderAgnes(res, {
       country,
       city,
       destination,
       budget,
+      days,
+      places,
+      startDate,
+      endDate,
       travelDates,
-      weatherNotes,
-      wardrobe,
       tripPlan,
-      imageResult,
-      visualError
+      savedItinerary
     });
   } catch (error) {
     renderAgnes(res, {
@@ -86,9 +119,11 @@ exports.generateTrip = async (req, res) => {
       city,
       destination,
       budget,
+      days,
+      places,
+      startDate,
+      endDate,
       travelDates,
-      weatherNotes,
-      wardrobe,
       error: error.message
     });
   }
@@ -142,4 +177,27 @@ exports.generateImage = async (req, res) => {
       error: error.message
     });
   }
+};
+
+exports.listItineraries = (req, res) => {
+  res.render('itineraries', {
+    title: 'Saved itineraries',
+    itineraries: itineraryModel.getAll()
+  });
+};
+
+exports.showItinerary = (req, res) => {
+  const itinerary = itineraryModel.getById(req.params.id);
+
+  if (!itinerary) {
+    res.status(404).render('404', {
+      title: 'Itinerary not found'
+    });
+    return;
+  }
+
+  res.render('itinerary', {
+    title: 'Saved itinerary',
+    itinerary
+  });
 };
