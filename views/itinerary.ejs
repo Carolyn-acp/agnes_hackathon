@@ -6,6 +6,7 @@
     <h1><%= itinerary.input.destination %></h1>
     <p><%= itinerary.input.startDate %> to <%= itinerary.input.endDate %> · <%= itinerary.input.days %> days · <%= itinerary.input.budget %></p>
   </div>
+  <a class="button" href="/budget?itineraryId=<%= itinerary.id %>">Create budget</a>
 </section>
 
 <section class="day-grid">

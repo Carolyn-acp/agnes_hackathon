@@ -63,6 +63,92 @@ nav a:hover {
   max-width: 680px;
 }
 
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  align-items: center;
+  gap: 42px;
+  min-height: 560px;
+}
+
+.home-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.home-copy h1,
+.home-copy p {
+  max-width: 680px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 18px;
+  color: var(--accent);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.secondary-button:hover {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.home-visual {
+  margin: 0;
+}
+
+.home-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(23, 32, 42, 0.14);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.feature-card {
+  display: block;
+  padding: 20px;
+  color: inherit;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.feature-card:hover {
+  border-color: var(--accent);
+}
+
+.feature-card h2 {
+  margin: 0 0 10px;
+}
+
+.feature-card p:last-child {
+  margin-bottom: 0;
+}
+
 .eyebrow {
   margin: 0 0 8px;
   color: var(--accent);
@@ -432,16 +518,6 @@ textarea {
 
 .visual-outfit-card {
   gap: 12px;
-}
-
-.outfit-illustration {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  background: #eef1f5;
-  border: 1px solid var(--line);
-  border-radius: 8px;
 }
 
 .outfit-stack {
@@ -924,6 +1000,15 @@ textarea {
 
   .agnes-grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-hero,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    min-height: auto;
   }
 
   .wardrobe-layout,

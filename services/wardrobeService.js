@@ -176,26 +176,6 @@ const completeCategorySelection = ({ selectedIds, items, itemMap, day, variation
   }, deduped);
 };
 
-const buildFlatLayPrompt = ({ outfit, itemMap, styleDescription }) => {
-  const selectedItems = outfit.selectedItemIds.map((id) => itemMap.get(id)).filter(Boolean);
-  const itemDescriptions = selectedItems
-    .map((item) => `${item.color ? `${item.color} ` : ''}${item.name} (${item.type})`)
-    .join(', ');
-  const additions = outfit.additionalItems
-    .map((item) => `${item.name}: ${item.reason}`)
-    .join('; ');
-
-  return `
-Flat lay fashion illustration of an outfit arranged neatly on a white background.
-The outfit consists of: ${itemDescriptions}.
-Arrange the look from top to bottom as if laid out on a bed: accessories and bag near the top, top or outer layer above, pants/skirt/dress in the center, shoes at the bottom.
-Use only one item per clothing category in the main outfit.
-Suggested extra styling items, if helpful, may be shown as subtle separate recommendations: ${additions || 'none'}.
-Style direction: ${styleDescription}.
-No model, no body, no face, no mannequin, editorial fashion styling, clean realistic fashion product layout.
-`;
-};
-
 exports.analyzeClothingPhoto = async (imageDataUrl) => {
   const prompt = `You are a fashion AI. Analyse this clothing photo and return JSON only:
 {
@@ -314,7 +294,7 @@ Return ONLY valid JSON array. Each item must have this shape:
   const validIds = new Set(items.map((item) => item.id));
   const itemMap = new Map(items.map((item) => [item.id, item]));
 
-  const normalizedOutfits = outfits.slice(0, outfitCount).map((outfit, index) => ({
+  return outfits.slice(0, outfitCount).map((outfit, index) => ({
     day: Number.parseInt(outfit.day, 10) || index + 1,
     title: outfit.title || `Day ${index + 1} outfit`,
     selectedItemIds: completeCategorySelection({
@@ -336,27 +316,5 @@ Return ONLY valid JSON array. Each item must have this shape:
       }))
       : [],
     stylingNote: outfit.stylingNote || ''
-  }));
-
-  return Promise.all(normalizedOutfits.map(async (outfit) => {
-    try {
-      const imagePrompt = buildFlatLayPrompt({
-        outfit,
-        itemMap,
-        styleDescription
-      });
-      const imageResult = await agnesService.generateImage(imagePrompt);
-
-      return {
-        ...outfit,
-        imagePrompt,
-        imageResult
-      };
-    } catch (error) {
-      return {
-        ...outfit,
-        imageError: error.message
-      };
-    }
   }));
 };

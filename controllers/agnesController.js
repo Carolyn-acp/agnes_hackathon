@@ -26,7 +26,7 @@ const calculateDays = (startDate, endDate) => {
 
 const renderAgnes = (res, options = {}) => {
   res.render('agnes', {
-    title: 'Agnes AI',
+    title: 'Wonder Wardrobe Itinerary',
     country: '',
     city: '',
     destination: '',

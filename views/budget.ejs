@@ -15,36 +15,34 @@
 <section class="tool-panel trip-builder">
   <h2>Budget inputs</h2>
   <form action="/budget/plan" method="post">
-    <div class="form-grid">
-      <label>
-        Destination
-        <input name="destination" type="text" placeholder="Tokyo, Japan" value="<%= destination %>">
-      </label>
-
-      <label>
-        Budget
-        <input name="budget" type="text" placeholder="$1200" value="<%= budget %>" required>
-      </label>
-
-      <label>
-        Travel dates
-        <input name="travelDates" type="text" placeholder="2026-07-03 to 2026-07-07" value="<%= travelDates %>">
-      </label>
-
-      <label>
-        Days
-        <input name="days" type="number" min="1" max="30" placeholder="5" value="<%= days %>">
-      </label>
-    </div>
-
     <label>
-      Trip itinerary
-      <textarea name="itineraryText" rows="8" placeholder="Day 1: Shibuya Crossing, ramen lunch, shopping at Shibuya 109&#10;Day 2: Senso-ji, Ueno Park, cafe lunch"><%= itineraryText %></textarea>
+      Saved itinerary
+      <select name="itineraryId" required>
+        <option value="">Select a saved itinerary</option>
+        <% itineraries.forEach((itinerary) => { %>
+          <option value="<%= itinerary.id %>" <%= itinerary.id === selectedItineraryId ? 'selected' : '' %>>
+            <%= itinerary.input.destination %> · <%= itinerary.input.startDate %> to <%= itinerary.input.endDate %> · <%= itinerary.input.budget %>
+          </option>
+        <% }) %>
+      </select>
     </label>
 
     <button type="submit">Create budget plan</button>
   </form>
 </section>
+
+<% if (selectedItinerary) { %>
+  <section class="agent-card budget-summary-card">
+    <p class="eyebrow">Selected itinerary</p>
+    <h2><%= selectedItinerary.input.destination %></h2>
+    <p><%= selectedItinerary.input.startDate %> to <%= selectedItinerary.input.endDate %> · <%= selectedItinerary.input.days %> days · <%= selectedItinerary.input.budget %></p>
+    <a class="button" href="/itineraries/<%= selectedItinerary.id %>">Open itinerary</a>
+  </section>
+<% } %>
+
+<% if (!itineraries.length) { %>
+  <p>No saved itineraries yet. Generate a trip plan first, then come back to Budget.</p>
+<% } %>
 
 <% if (budgetPlan) { %>
   <section class="agent-card budget-card budget-summary-card">

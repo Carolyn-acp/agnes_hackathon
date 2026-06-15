@@ -1,13 +1,42 @@
 <%- include('partials/header') %>
 
-<section class="hero">
-  <p class="eyebrow">MVC scaffold</p>
-  <h1>Your app structure is ready.</h1>
-  <p>
-    This starter separates routes, controllers, models, and views so the project
-    can grow without becoming tangled.
-  </p>
-  <a class="button" href="/items">View <%= itemCount %> items</a>
+<section class="home-hero">
+  <div class="home-copy">
+    <p class="eyebrow">AI travel planner</p>
+    <h1>Plan the trip, outfit, and budget in one flow.</h1>
+    <p>
+      Build a day-by-day itinerary, save it, match outfits from your uploaded wardrobe,
+      and turn the trip into a practical spending plan.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="/agnes">Create itinerary</a>
+      <a class="secondary-button" href="/wardrobe">Plan outfits</a>
+    </div>
+  </div>
+
+  <figure class="home-visual">
+    <img src="/images/home-boarding-pass.png" alt="Pastel boarding pass and passport wallet for travel planning">
+  </figure>
+</section>
+
+<section class="feature-grid" aria-label="Planner features">
+  <a class="feature-card" href="/agnes">
+    <p class="eyebrow">Step 1</p>
+    <h2>Itinerary</h2>
+    <p>Choose country, city, dates, places, and budget. Wonder Wardrobe creates daily cards with weather and attraction labels.</p>
+  </a>
+
+  <a class="feature-card" href="/wardrobe">
+    <p class="eyebrow">Step 2</p>
+    <h2>Wardrobe</h2>
+    <p>Upload tops and bottoms, then preview outfits using your real submitted item photos.</p>
+  </a>
+
+  <a class="feature-card" href="/budget">
+    <p class="eyebrow">Step 3</p>
+    <h2>Budget</h2>
+    <p>Select a saved itinerary and split the spending across daily caps and categories.</p>
+  </a>
 </section>
 
 <%- include('partials/footer') %>
