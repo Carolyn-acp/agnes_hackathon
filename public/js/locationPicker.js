@@ -4,10 +4,19 @@ const countryList = document.querySelector('[data-country-list]');
 const cityList = document.querySelector('[data-city-list]');
 const countryStatus = document.querySelector('[data-country-status]');
 const cityStatus = document.querySelector('[data-city-status]');
+const startDateInput = document.querySelector('[data-start-date]');
+const endDateInput = document.querySelector('[data-end-date]');
+const daysInput = document.querySelector('[data-days-input]');
+const daysStatus = document.querySelector('[data-days-status]');
 
 let lastCountryLetter = '';
 let lastLoadedCountry = '';
 let countryOptions = [];
+const cityStateCountries = new Set([
+  'singapore',
+  'monaco',
+  'vatican city'
+]);
 
 const setDatalistOptions = (list, options) => {
   list.innerHTML = '';
@@ -56,6 +65,16 @@ const loadCities = async (country, keepSelectedCity = false) => {
   const selectedCountry = country.trim();
 
   if (!cityInput || !cityList || !selectedCountry || selectedCountry === lastLoadedCountry) {
+    return;
+  }
+
+  if (cityStateCountries.has(selectedCountry.toLowerCase())) {
+    lastLoadedCountry = selectedCountry;
+    cityInput.disabled = false;
+    cityInput.value = selectedCountry;
+    cityInput.placeholder = selectedCountry;
+    cityStatus.textContent = `${selectedCountry} is a city-state, so city is set automatically.`;
+    setDatalistOptions(cityList, [selectedCountry]);
     return;
   }
 
@@ -125,4 +144,47 @@ if (countryInput) {
   countryInput.addEventListener('input', loadCountriesByFirstLetter);
   countryInput.addEventListener('change', maybeLoadCities);
   countryInput.addEventListener('blur', maybeLoadCities);
+}
+
+const calculateTripDays = () => {
+  if (!startDateInput || !endDateInput || !daysInput) {
+    return;
+  }
+
+  if (startDateInput.value) {
+    endDateInput.min = startDateInput.value;
+  } else {
+    endDateInput.removeAttribute('min');
+  }
+
+  if (endDateInput.value) {
+    startDateInput.max = endDateInput.value;
+  } else {
+    startDateInput.removeAttribute('max');
+  }
+
+  if (startDateInput.value && endDateInput.value && endDateInput.value < startDateInput.value) {
+    endDateInput.value = startDateInput.value;
+  }
+
+  const startDate = startDateInput.valueAsDate;
+  const endDate = endDateInput.valueAsDate;
+
+  if (!startDate || !endDate) {
+    daysInput.value = '';
+    daysStatus.textContent = 'Choose start and end dates.';
+    return;
+  }
+
+  const millisecondsPerDay = 24 * 60 * 60 * 1000;
+  const days = Math.round((endDate - startDate) / millisecondsPerDay) + 1;
+
+  daysInput.value = days;
+  daysStatus.textContent = `${days} day${days === 1 ? '' : 's'} selected.`;
+};
+
+if (startDateInput && endDateInput) {
+  calculateTripDays();
+  startDateInput.addEventListener('change', calculateTripDays);
+  endDateInput.addEventListener('change', calculateTripDays);
 }
