@@ -2,6 +2,13 @@ const apiBase = () => process.env.AGNES_API_BASE || 'https://apihub.agnes-ai.com
 
 const getApiKey = () => process.env.AGNES_API_KEY || process.env.AGNES_TOKEN;
 
+const wait = (milliseconds) => new Promise((resolve) => {
+  setTimeout(resolve, milliseconds);
+});
+
+const isTransientAgnesError = (message) =>
+  /upstream error|timeout|temporarily|rate limit|request failed/i.test(message || '');
+
 const toList = (value) => {
   if (Array.isArray(value)) {
     return value.filter(Boolean);
@@ -102,7 +109,7 @@ const normalizeTripPlan = ({ parsed, text, destination, budget, places, parsedDa
   };
 };
 
-const postToAgnes = async (path, payload) => {
+const postToAgnesOnce = async (path, payload) => {
   const apiKey = getApiKey();
 
   if (!apiKey) {
@@ -121,10 +128,37 @@ const postToAgnes = async (path, payload) => {
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    throw new Error(data.error?.message || data.message || 'Agnes API request failed');
+    const message = data.error?.message || data.message || 'Agnes API request failed';
+    const error = new Error(message);
+    error.status = response.status;
+    throw error;
   }
 
   return data;
+};
+
+const postToAgnes = async (path, payload) => {
+  let lastError;
+
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      return await postToAgnesOnce(path, payload);
+    } catch (error) {
+      lastError = error;
+
+      if (attempt === 3 || (!isTransientAgnesError(error.message) && error.status < 500)) {
+        break;
+      }
+
+      await wait(500 * attempt);
+    }
+  }
+
+  if (isTransientAgnesError(lastError?.message)) {
+    throw new Error('Agnes is temporarily having an upstream issue. Please try Generate again in a moment.');
+  }
+
+  throw lastError;
 };
 
 exports.generateText = async (prompt) => {
@@ -143,39 +177,23 @@ exports.generateText = async (prompt) => {
 
 exports.generateTripPlan = async ({ destination, budget, travelDates, places, days }) => {
   const parsedDays = Number.parseInt(days, 10) || 1;
-  const prompt = `
-You are a Research Agent and Weather Agent for a travel itinerary app.
+  const prompt = `Create a ${parsedDays}-day itinerary for ${destination}.
+Budget: ${budget}
+Dates: ${travelDates || 'Not provided'}
+User-selected places, high priority: ${places || 'Not provided'}
 
-User inputs:
-- Destination: ${destination}
-- Budget: ${budget}
-- Number of days: ${parsedDays}
-- Travel dates: ${travelDates || 'Not provided'}
-- Places user wants to visit: ${places || 'Not provided'}
+Return ONLY JSON. Rules: exactly ${parsedDays} days; include all user-selected places; add nearby AI-recommended attractions if needed; label every attraction source as "user-selected" or "AI-recommended"; include weather estimate per day based on destination and dates.
 
-Rules:
-- Return exactly ${parsedDays} day objects in the "days" array.
-- If the user asks for 5 days, return Day 1, Day 2, Day 3, Day 4, and Day 5 as separate objects.
-- The user-selected places are high priority.
-- Include every place from "Places user wants to visit" somewhere in the itinerary.
-- If there are insufficient user-selected places to fill ${parsedDays} days, recommend additional attractions nearby that match the destination, budget, and travel style.
-- Clearly label every attraction as either "user-selected" or "AI-recommended".
-- Keep activities realistic for travel time and budget.
-- Weather must be based on destination and travel dates. If dates are not exact enough for a real forecast, provide a seasonal estimate and say it is an estimate.
-
-Return ONLY valid JSON with this exact shape:
+JSON shape:
 {
   "days": [
     {
       "day": 1,
-      "title": "Short day title",
-      "weather": "Weather for this day based on the destination and dates.",
-      "activities": ["Morning activity", "Afternoon activity", "Evening activity"],
-      "attractions": [
-        { "name": "Place name", "source": "user-selected" },
-        { "name": "Nearby recommended place", "source": "AI-recommended" }
-      ],
-      "budgetNote": "Short budget note for this day."
+      "title": "Short title",
+      "weather": "Weather estimate",
+      "activities": ["Morning", "Afternoon", "Evening"],
+      "attractions": [{ "name": "Place", "source": "user-selected" }],
+      "budgetNote": "Short budget note"
     }
   ]
 }

@@ -1,7 +1,4 @@
 const agnesService = require('../services/agnesService');
-const budgetService = require('../services/budgetService');
-
-const trim = (value) => (value || '').toString().trim();
 
 const normalizeTripPlanForView = (tripPlan) => {
   if (Array.isArray(tripPlan?.days)) {
@@ -37,7 +34,6 @@ const renderAgnes = (res, options = {}) => {
     endDate: '',
     travelDates: '',
     tripPlan: null,
-    budgetPlan: null,
     textPrompt: '',
     imagePrompt: '',
     textResult: '',
@@ -53,13 +49,6 @@ exports.showAgnes = (req, res) => {
 };
 
 exports.generateTrip = async (req, res) => {
-  const country = trim(req.body.country);
-  const city = trim(req.body.city);
-  const destination = [city, country].filter(Boolean).join(', ') || trim(req.body.destination);
-  const budget = trim(req.body.budget);
-  const travelDates = trim(req.body.travelDates);
-  const weatherNotes = trim(req.body.weatherNotes);
-  const wardrobe = trim(req.body.wardrobe);
   const country = req.body.country && req.body.country.trim();
   const city = req.body.city && req.body.city.trim();
   const destination = [city, country].filter(Boolean).join(', ') || (req.body.destination && req.body.destination.trim());
@@ -94,11 +83,6 @@ exports.generateTrip = async (req, res) => {
       places,
       travelDates,
     });
-    const budgetPlan = budgetService.createBudgetPlan({
-      budget,
-      travelDates,
-      itinerary: tripPlan.itinerary
-    });
 
     renderAgnes(res, {
       country,
@@ -110,12 +94,6 @@ exports.generateTrip = async (req, res) => {
       startDate,
       endDate,
       travelDates,
-      weatherNotes,
-      wardrobe,
-      tripPlan,
-      budgetPlan,
-      imageResult,
-      visualError
       tripPlan
     });
   } catch (error) {
@@ -135,7 +113,7 @@ exports.generateTrip = async (req, res) => {
 };
 
 exports.generateText = async (req, res) => {
-  const textPrompt = trim(req.body.prompt);
+  const textPrompt = req.body.prompt && req.body.prompt.trim();
 
   if (!textPrompt) {
     renderAgnes(res, {
@@ -160,7 +138,7 @@ exports.generateText = async (req, res) => {
 };
 
 exports.generateImage = async (req, res) => {
-  const imagePrompt = trim(req.body.prompt);
+  const imagePrompt = req.body.prompt && req.body.prompt.trim();
 
   if (!imagePrompt) {
     renderAgnes(res, {
