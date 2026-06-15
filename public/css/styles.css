@@ -328,7 +328,7 @@ textarea {
 
 .budget-metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 10px;
   margin: 16px 0;
 }
@@ -361,6 +361,30 @@ textarea {
 
 .budget-planner {
   margin-top: 28px;
+}
+
+.budget-handoff {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.budget-handoff h2 {
+  margin: 0 0 8px;
+}
+
+.budget-handoff p {
+  margin: 0;
+}
+
+.budget-handoff form {
+  flex: 0 0 auto;
+}
+
+.budget-summary-card {
+  margin-top: 24px;
 }
 
 .budget-planner h2 {
@@ -499,13 +523,15 @@ textarea {
   .form-grid,
   .date-range-inputs,
   .agent-results,
-<<<<<<< Updated upstream
-  .day-grid {
-=======
+  .day-grid,
   .budget-metrics,
   .category-grid {
->>>>>>> Stashed changes
     grid-template-columns: 1fr;
+  }
+
+  .budget-handoff {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   nav {

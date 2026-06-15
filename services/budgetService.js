@@ -21,7 +21,13 @@ const parseMoney = (budget) => {
   };
 };
 
-const parseTripDays = ({ budget, travelDates, itinerary }) => {
+const parseTripDays = ({ budget, travelDates, itinerary, days }) => {
+  const providedDays = Number(days);
+
+  if (Number.isInteger(providedDays) && providedDays > 0) {
+    return providedDays;
+  }
+
   const combined = `${budget || ''} ${travelDates || ''} ${itinerary || ''}`;
   const explicitDays = combined.match(/(\d+)\s*(?:days?|d)\b/i);
 
@@ -73,9 +79,9 @@ const placeType = (place) => {
   const lower = place.toLowerCase();
 
   if (/market|mall|shop|boutique|district|street|bazaar|souvenir/.test(lower)) return 'shopping';
+  if (/station|airport|train|bus|taxi|metro|subway|ferry/.test(lower)) return 'transport';
   if (/museum|gallery|temple|shrine|palace|park|tour|garden|landmark|observation|show|class/.test(lower)) return 'activities';
   if (/cafe|restaurant|bar|food|dinner|lunch|breakfast|brunch|dessert|hawker|ramen|sushi|snack|meal|tea|coffee/.test(lower)) return 'food';
-  if (/station|airport|train|bus|taxi|metro|subway|ferry/.test(lower)) return 'transport';
 
   return 'activities';
 };
@@ -138,15 +144,15 @@ const createPlaceGuidance = (places, categoryAmounts, currency) => {
   });
 };
 
-exports.createBudgetPlan = ({ budget, travelDates, itinerary }) => {
+exports.createBudgetPlan = ({ budget, travelDates, itinerary, days }) => {
   const { amount, currency } = parseMoney(budget);
-  const days = parseTripDays({ budget, travelDates, itinerary });
-  const dailyBase = amount > 0 ? amount / days : 0;
-  const totalBuffer = dailyBase * CATEGORY_WEIGHTS.buffer * days;
+  const tripDays = parseTripDays({ budget, travelDates, itinerary, days });
+  const dailyBase = amount > 0 ? amount / tripDays : 0;
+  const totalBuffer = dailyBase * CATEGORY_WEIGHTS.buffer * tripDays;
 
-  const dayPlans = Array.from({ length: days }, (_, index) => {
+  const dayPlans = Array.from({ length: tripDays }, (_, index) => {
     const dayNumber = index + 1;
-    const dayText = extractDayText(itinerary, dayNumber, days);
+    const dayText = extractDayText(itinerary, dayNumber, tripDays);
     const categories = allocateCategories(dailyBase, dayText, currency);
     const rawCategories = {
       foodRaw: dailyBase * CATEGORY_WEIGHTS.food,
@@ -171,7 +177,7 @@ exports.createBudgetPlan = ({ budget, travelDates, itinerary }) => {
 
   return {
     totalBudget: amount > 0 ? money(amount, currency) : budget || 'Not set',
-    days,
+    days: tripDays,
     dailyAverage: money(dailyBase, currency),
     emergencyBuffer: money(totalBuffer, currency),
     summary: `Plan around ${money(dailyBase, currency)} per day, including a built-in ${money(totalBuffer, currency)} trip buffer for emergencies, weather changes, or outfit-related purchases.`,
