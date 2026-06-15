@@ -95,14 +95,12 @@
           <p><%= day.weather %></p>
         </div>
 
-<<<<<<< Updated upstream
         <h3>Plan</h3>
         <ul>
           <% (Array.isArray(day.activities) ? day.activities : [day.activities].filter(Boolean)).forEach((activity) => { %>
             <li><%= activity %></li>
           <% }) %>
         </ul>
-=======
     <% if (budgetPlan) { %>
       <article class="agent-card budget-card">
         <p class="eyebrow">Agent 5</p>
@@ -130,7 +128,6 @@
         <p><%= tripPlan.spending %></p>
       </article>
     <% } %>
->>>>>>> Stashed changes
 
         <% const attractionsForDay = Array.isArray(day.attractions) ? day.attractions : []; %>
         <% if (attractionsForDay.length) { %>
