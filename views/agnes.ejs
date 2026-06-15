@@ -12,6 +12,12 @@
   <p class="alert"><%= error %></p>
 <% } %>
 
+<% if (savedItinerary) { %>
+  <p class="success-alert">
+    Saved itinerary <a href="/itineraries/<%= savedItinerary.id %>"><%= savedItinerary.id %></a>
+  </p>
+<% } %>
+
 <section class="tool-panel trip-builder">
   <h2>Trip inputs</h2>
   <form action="/agnes/trip" method="post">
@@ -149,15 +155,12 @@
     <% }) %>
   </section>
 
-  <% if (budgetPlan) { %>
-    <section class="budget-planner">
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">Your budget segment</p>
-          <h2>Daily spending guidelines</h2>
-          <p>Use these caps while following the itinerary so each day stays balanced across food, transport, activities, shopping, and backup money.</p>
-        </div>
-      </div>
+  <section class="tool-panel budget-handoff">
+    <div>
+      <p class="eyebrow">Budget segment</p>
+      <h2>Turn this itinerary into a spending plan</h2>
+      <p>Send the generated itinerary and your trip budget to the dedicated budget planner.</p>
+    </div>
 
       <div class="budget-day-grid">
         <% budgetPlan.dayPlans.forEach((dayPlan) => { %>

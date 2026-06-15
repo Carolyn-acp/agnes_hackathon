@@ -2,6 +2,7 @@ const agnesService = require('../services/agnesService');
 const budgetService = require('../services/budgetService');
 const fs = require('fs');
 const path = require('path');
+const itineraryModel = require('../models/itineraryModel');
 
 const normalizeTripPlanForView = (tripPlan) => {
   if (Array.isArray(tripPlan?.days)) {
@@ -43,6 +44,7 @@ const renderAgnes = (res, options = {}) => {
     imagePrompt: '',
     textResult: '',
     imageResult: '',
+    savedItinerary: null,
     error: '',
     ...options,
     tripPlan: options.tripPlan ? normalizeTripPlanForView(options.tripPlan) : options.tripPlan || null,
@@ -122,6 +124,20 @@ exports.generateTrip = async (req, res) => {
       budgetPlan
     };
     fs.writeFileSync(filePath, JSON.stringify(itineraryData, null, 2));
+    const savedItinerary = itineraryModel.create({
+      input: {
+        country,
+        city,
+        destination,
+        budget,
+        days,
+        places: places ? places.split(/\r?\n|,/).map((place) => place.trim()).filter(Boolean) : [],
+        startDate,
+        endDate,
+        travelDates
+      },
+      tripPlan
+    });
 
     renderAgnes(res, {
       country,
@@ -135,7 +151,8 @@ exports.generateTrip = async (req, res) => {
       travelDates,
       tripPlan,
       packingList,
-      budgetPlan
+      budgetPlan,
+      savedItinerary
     });
   } catch (error) {
     renderAgnes(res, {
@@ -201,4 +218,27 @@ exports.generateImage = async (req, res) => {
       error: error.message
     });
   }
+};
+
+exports.listItineraries = (req, res) => {
+  res.render('itineraries', {
+    title: 'Saved itineraries',
+    itineraries: itineraryModel.getAll()
+  });
+};
+
+exports.showItinerary = (req, res) => {
+  const itinerary = itineraryModel.getById(req.params.id);
+
+  if (!itinerary) {
+    res.status(404).render('404', {
+      title: 'Itinerary not found'
+    });
+    return;
+  }
+
+  res.render('itinerary', {
+    title: 'Saved itinerary',
+    itinerary
+  });
 };

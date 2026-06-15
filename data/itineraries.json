@@ -1,0 +1,132 @@
+[
+  {
+    "id": "3cdf7312-2609-477f-b68f-836ee5e37f3b",
+    "createdAt": "2026-06-15T07:04:15.767Z",
+    "input": {
+      "country": "Singapore",
+      "city": "Singapore",
+      "destination": "Singapore, Singapore",
+      "budget": "$1200",
+      "days": "5",
+      "places": [
+        "Singapore flyers"
+      ],
+      "startDate": "2026-08-11",
+      "endDate": "2026-08-15",
+      "travelDates": "2026-08-11 to 2026-08-15"
+    },
+    "tripPlan": {
+      "days": [
+        {
+          "day": 1,
+          "title": "Arrival & Marina Bay Introduction",
+          "weather": "Hot and humid, 31°C, Chance of thunderstorms in late afternoon.",
+          "activities": [
+            "Check into hotel near Marina Bay; drop luggage.",
+            "Walk along Marina Bay Promenade to see the Merlion Park.",
+            "Visit Gardens by the Bay (outdoor Supertree Grove) before sunset."
+          ],
+          "attractions": [
+            {
+              "name": "Merlion Park",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Gardens by the Bay (Supertree Grove)",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Accommodation approx $250/night. Dinner at Maxwell Food Centre ($15)."
+        },
+        {
+          "day": 2,
+          "title": "Singapore Flyer & City Highlights",
+          "weather": "Partly cloudy, 30°C, High humidity.",
+          "activities": [
+            "Morning: Visit the Singapore Flyer for panoramic views.",
+            "Afternoon: Explore Chinatown and visit Buddha Tooth Relic Temple.",
+            "Evening: Watch the Spectra Light & Water Show at Marina Bay Sands."
+          ],
+          "attractions": [
+            {
+              "name": "Singapore Flyer",
+              "source": "user-selected"
+            },
+            {
+              "name": "Buddha Tooth Relic Temple",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Spectra Light & Water Show",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Singapore Flyer tickets ~$33/person. Hotel ~$250. Dinner in Chinatown ($20)."
+        },
+        {
+          "day": 3,
+          "title": "Cultural Heritage & Sentosa",
+          "weather": "Hot, 32°C, Afternoon rain likely.",
+          "activities": [
+            "Morning: Explore Little India and Serangoon Road.",
+            "Afternoon: Take Sentosa Express to Sentosa Island; relax at Siloso Beach.",
+            "Evening: Dinner at VivoCity Mall."
+          ],
+          "attractions": [
+            {
+              "name": "Little India Heritage District",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Siloso Beach",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Hotel ~$250. Sentosa access is free, but beach activities cost extra. Lunch in Little India ($15)."
+        },
+        {
+          "day": 4,
+          "title": "Nature & Urban Greenery",
+          "weather": "Overcast, 29°C, Light drizzle possible.",
+          "activities": [
+            "Morning: Visit the Singapore Botanic Gardens (UNESCO World Heritage Site).",
+            "Afternoon: Explore Orchard Road for shopping and street food.",
+            "Evening: Night Safari or River Wonders (if budget permits, otherwise walk along Singapore River)."
+          ],
+          "attractions": [
+            {
+              "name": "Singapore Botanic Gardens",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Orchard Road",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Botanic Gardens entry is free. Hotel ~$250. Dinner at hawker center ($10)."
+        },
+        {
+          "day": 5,
+          "title": "Final Souvenirs & Departure",
+          "weather": "Warm, 31°C, Clear skies.",
+          "activities": [
+            "Morning: Last-minute shopping at Mustafa Centre or Jewel Changi Airport.",
+            "Afternoon: Visit Jewel Changi Airport's HSBC Rain Vortex.",
+            "Departure."
+          ],
+          "attractions": [
+            {
+              "name": "Jewel Changi Airport",
+              "source": "AI-recommended"
+            },
+            {
+              "name": "Mustafa Centre",
+              "source": "AI-recommended"
+            }
+          ],
+          "budgetNote": "Checkout. Final meals and souvenirs within remaining budget. Total trip cost tracked against $1200 limit."
+        }
+      ]
+    }
+  }
+]

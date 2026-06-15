@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<section class="section-header">
+  <div>
+    <p class="eyebrow">Saved itinerary</p>
+    <h1><%= itinerary.input.destination %></h1>
+    <p><%= itinerary.input.startDate %> to <%= itinerary.input.endDate %> · <%= itinerary.input.days %> days · <%= itinerary.input.budget %></p>
+  </div>
+</section>
+
+<section class="day-grid">
+  <% itinerary.tripPlan.days.forEach((day) => { %>
+    <article class="day-card">
+      <p class="eyebrow">Day <%= day.day %></p>
+      <h2><%= day.title %></h2>
+
+      <div class="weather-strip">
+        <strong>Weather</strong>
+        <p><%= day.weather %></p>
+      </div>
+
+      <h3>Plan</h3>
+      <ul>
+        <% (Array.isArray(day.activities) ? day.activities : [day.activities].filter(Boolean)).forEach((activity) => { %>
+          <li><%= activity %></li>
+        <% }) %>
+      </ul>
+
+      <% const attractionsForDay = Array.isArray(day.attractions) ? day.attractions : []; %>
+      <% if (attractionsForDay.length) { %>
+        <h3>Attractions</h3>
+        <ul>
+          <% attractionsForDay.forEach((attraction) => { %>
+            <li>
+              <strong><%= attraction.name %></strong>
+              <span class="source-pill"><%= attraction.source %></span>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+
+      <% if (day.budgetNote) { %>
+        <p><strong>Budget:</strong> <%= day.budgetNote %></p>
+      <% } %>
+    </article>
+  <% }) %>
+</section>
+
+<%- include('partials/footer') %>
